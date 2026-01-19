@@ -53,15 +53,15 @@ export function Header() {
             <Menu className="h-5 w-5" />
             <span className="sr-only">Toggle menu</span>
           </SheetTrigger>
-          <SheetContent side="right">
+          <SheetContent side="right" className="px-6">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-            <nav className="flex flex-col gap-4 mt-8">
+            <nav className="flex flex-col gap-5 mt-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-lg"
+                  className="text-lg text-foreground"
                 >
                   {link.label}
                 </Link>
@@ -69,7 +69,7 @@ export function Header() {
               <Link
                 href="/apply"
                 onClick={() => setOpen(false)}
-                className={buttonVariants({ className: "mt-4" })}
+                className={buttonVariants({ size: "lg", className: "w-full mt-2" })}
               >
                 Apply
               </Link>

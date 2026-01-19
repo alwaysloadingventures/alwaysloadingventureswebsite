@@ -17,11 +17,11 @@ export default function HomePage() {
           From paid advisory to equity partnerships, we work where we can
           materially move outcomes.
         </p>
-        <div className="flex flex-wrap gap-4">
-          <Link href="/apply/advisory" className={buttonVariants()}>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Link href="/apply/advisory" className={buttonVariants({ size: "lg", className: "w-full sm:w-auto" })}>
             Apply for Advisory
           </Link>
-          <Link href="/apply/partnership" className={buttonVariants({ variant: "outline" })}>
+          <Link href="/apply/partnership" className={buttonVariants({ variant: "outline", size: "lg", className: "w-full sm:w-auto" })}>
             Apply for Strategic Partnership
           </Link>
         </div>
