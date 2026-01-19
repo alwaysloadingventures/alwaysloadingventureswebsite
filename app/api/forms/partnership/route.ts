@@ -1,34 +1,24 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import { supabaseServer } from "@/lib/supabase-server";
 
-export async function POST(request: NextRequest) {
+export async function POST(req: Request) {
   try {
-    const data = await request.json();
+    const payload = await req.json();
 
-    // Add submission metadata
-    const submission = {
-      id: crypto.randomUUID(),
+    const supabase = supabaseServer();
+    const { error } = await supabase.from("form_submissions").insert({
       submission_type: "partnership",
-      created_at: new Date().toISOString(),
-      answers: data,
-      status: "new",
-      // priority_signal will be calculated based on scoring rules
-    };
+      payload,
+    });
 
-    // TODO: Save to database (Supabase/Postgres) or Airtable
-    // TODO: Send notification email on submission
-    // TODO: Optionally push to Slack webhook
-    // TODO: Calculate priority score based on docs/12_forms_scoring.md
+    if (error) {
+      throw new Error(error.message);
+    }
 
-    console.log("Partnership submission received:", submission);
-
+    return NextResponse.json({ ok: true });
+  } catch (err: any) {
     return NextResponse.json(
-      { success: true, id: submission.id },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error("Error processing partnership submission:", error);
-    return NextResponse.json(
-      { success: false, error: "Failed to process submission" },
+      { ok: false, error: err?.message ?? "Unknown error" },
       { status: 500 }
     );
   }
