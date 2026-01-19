@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AlwaysLoading Ventures — Operator-Led Venture Studio & Advisory Firm",
-  description: "We partner with founders and operators to scale businesses through execution, systems, and strategic leadership — not just advice.",
+  description:
+    "We partner with founders and operators to scale businesses through execution, systems, and strategic leadership — not just advice.",
 };
 
 export default function RootLayout({
@@ -27,9 +30,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <Header />
+        <main className="flex-1">
+          <div className="mx-auto max-w-5xl px-4 py-8">{children}</div>
+        </main>
+        <Footer />
       </body>
     </html>
   );

@@ -1,0 +1,82 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { buttonVariants } from "@/lib/button-variants";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+
+const navLinks = [
+  { href: "/what-we-do", label: "What We Do" },
+  { href: "/how-we-partner", label: "How We Partner" },
+  { href: "/venture-studio", label: "Venture Studio" },
+  { href: "/advisory", label: "Advisory" },
+  { href: "/apply", label: "Apply" },
+  { href: "/about", label: "About" },
+];
+
+export function Header() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="border-b">
+      <div className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+        {/* Brand */}
+        <Link href="/" className="font-semibold text-lg">
+          AlwaysLoading Ventures
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link href="/apply" className={buttonVariants({ size: "sm" })}>
+            Apply
+          </Link>
+        </nav>
+
+        {/* Mobile Menu */}
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger className={`md:hidden ${buttonVariants({ variant: "ghost", size: "icon" })}`}>
+            <Menu className="h-5 w-5" />
+            <span className="sr-only">Toggle menu</span>
+          </SheetTrigger>
+          <SheetContent side="right">
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <nav className="flex flex-col gap-4 mt-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="text-lg"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/apply"
+                onClick={() => setOpen(false)}
+                className={buttonVariants({ className: "mt-4" })}
+              >
+                Apply
+              </Link>
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </header>
+  );
+}

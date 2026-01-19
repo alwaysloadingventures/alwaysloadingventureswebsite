@@ -1,33 +1,35 @@
-import Link from "next/link";
-
 export default function HowWePartnerPage() {
   return (
-    <main>
-      <h1>How We Partner</h1>
-      <p>
-        We don't believe in one-size-fits-all engagements. Every partnership is
-        structured around outcomes, incentives, and execution responsibility.
-      </p>
+    <div className="space-y-8">
+      <section className="space-y-4">
+        <h1 className="text-4xl font-bold tracking-tight">How We Partner</h1>
+        <p className="text-xl text-muted-foreground">
+          We don't believe in one-size-fits-all engagements. Every partnership
+          is structured around outcomes, incentives, and execution
+          responsibility.
+        </p>
+      </section>
 
-      <section>
-        <h2>Engagement Models</h2>
-        <ul>
+      <section className="space-y-3">
+        <h2 className="text-2xl font-semibold">Engagement Models</h2>
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>
-            <strong>Advisory:</strong> Retainers or defined projects
+            <strong className="text-foreground">Advisory:</strong> Retainers or
+            defined projects
           </li>
           <li>
-            <strong>Hybrid:</strong> Cash + equity
+            <strong className="text-foreground">Hybrid:</strong> Cash + equity
           </li>
           <li>
-            <strong>Equity for Execution:</strong> Hands-on leadership with
-            ownership
+            <strong className="text-foreground">Equity for Execution:</strong>{" "}
+            Hands-on leadership with ownership
           </li>
         </ul>
       </section>
 
-      <section>
-        <h2>What We Don't Do</h2>
-        <ul>
+      <section className="space-y-3">
+        <h2 className="text-2xl font-semibold">What We Don't Do</h2>
+        <ul className="list-disc list-inside space-y-1 text-muted-foreground">
           <li>No generic coaching or courses</li>
           <li>No free consulting</li>
           <li>No passive investing</li>
@@ -35,14 +37,6 @@ export default function HowWePartnerPage() {
           <li>No high-volume client work</li>
         </ul>
       </section>
-
-      <footer>
-        <p>AlwaysLoading Ventures — Operator-Led Venture Studio & Advisory Firm</p>
-        <p>
-          Disclaimer: AlwaysLoading Ventures is not a registered investment
-          fund. All engagements are structured on a case-by-case basis.
-        </p>
-      </footer>
-    </main>
+    </div>
   );
 }

@@ -1,11 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 export default function AdvisoryApplicationPage() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    // Section A — Contact & Company
     fullName: "",
     email: "",
     phone: "",
@@ -13,31 +16,25 @@ export default function AdvisoryApplicationPage() {
     companyWebsite: "",
     role: "",
     isDecisionMaker: "",
-    // Section B — Business Snapshot
     businessType: "",
     offeringFormat: "",
     revenueModel: "",
     monthlyRevenue: "",
     teamSize: "",
-    // Section C — Marketing & Growth
     marketingChannels: [] as string[],
     monthlyMarketingSpend: "",
     paidPlatforms: "",
-    // Section D — What You Want Help With
     topOutcomes: "",
     biggestBottleneck: "",
     bottleneckOther: "",
     timelineUrgency: "",
-    // Section E — Engagement Fit
     engagementType: "",
     advisoryBudget: "",
     anythingElse: "",
   });
 
   const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -73,498 +70,272 @@ export default function AdvisoryApplicationPage() {
 
   if (submitted) {
     return (
-      <main>
-        <h1>Application Received</h1>
-        <p>
+      <div className="space-y-4">
+        <h1 className="text-4xl font-bold tracking-tight">Application Received</h1>
+        <p className="text-muted-foreground">
           Thanks — we review every application. If it's a fit, we'll reach out
           with next steps.
         </p>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main>
-      <h1>Advisory Application</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="space-y-8">
+      <div className="space-y-2">
+        <h1 className="text-4xl font-bold tracking-tight">Advisory Application</h1>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-10">
         {/* Section A — Contact & Company */}
-        <section>
-          <h2>Section A — Contact & Company</h2>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold border-b pb-2">Contact & Company</h2>
 
-          <div>
-            <label htmlFor="fullName">Full name *</label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              required
-              value={formData.fullName}
-              onChange={handleInputChange}
-            />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="fullName">Full name *</Label>
+              <Input
+                type="text"
+                id="fullName"
+                name="fullName"
+                required
+                value={formData.fullName}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="email">Email *</Label>
+              <Input
+                type="email"
+                id="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone / WhatsApp</Label>
+              <Input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="companyName">Company name *</Label>
+              <Input
+                type="text"
+                id="companyName"
+                name="companyName"
+                required
+                value={formData.companyName}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="companyWebsite">Company website *</Label>
+              <Input
+                type="url"
+                id="companyWebsite"
+                name="companyWebsite"
+                required
+                value={formData.companyWebsite}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="role">Your role/title *</Label>
+              <Input
+                type="text"
+                id="role"
+                name="role"
+                required
+                value={formData.role}
+                onChange={handleInputChange}
+              />
+            </div>
           </div>
 
-          <div>
-            <label htmlFor="email">Email *</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="phone">Phone / WhatsApp</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="companyName">Company name *</label>
-            <input
-              type="text"
-              id="companyName"
-              name="companyName"
-              required
-              value={formData.companyName}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="companyWebsite">Company website *</label>
-            <input
-              type="url"
-              id="companyWebsite"
-              name="companyWebsite"
-              required
-              value={formData.companyWebsite}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="role">Your role/title *</label>
-            <input
-              type="text"
-              id="role"
-              name="role"
-              required
-              value={formData.role}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div>
-            <label>Are you the decision-maker? *</label>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="isDecisionMaker"
-                  value="Yes"
-                  required
-                  checked={formData.isDecisionMaker === "Yes"}
-                  onChange={handleInputChange}
-                />
-                Yes
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="isDecisionMaker"
-                  value="No (but involved)"
-                  checked={formData.isDecisionMaker === "No (but involved)"}
-                  onChange={handleInputChange}
-                />
-                No (but involved)
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="isDecisionMaker"
-                  value="No"
-                  checked={formData.isDecisionMaker === "No"}
-                  onChange={handleInputChange}
-                />
-                No
-              </label>
+          <div className="space-y-2">
+            <Label>Are you the decision-maker? *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["Yes", "No (but involved)", "No"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="isDecisionMaker"
+                    value={option}
+                    required
+                    checked={formData.isDecisionMaker === option}
+                    onChange={handleInputChange}
+                    className="accent-primary"
+                  />
+                  <span className="text-sm">{option}</span>
+                </label>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Section B — Business Snapshot */}
-        <section>
-          <h2>Section B — Business Snapshot</h2>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold border-b pb-2">Business Snapshot</h2>
 
-          <div>
-            <label>Business type *</label>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="businessType"
-                  value="B2B"
-                  required
-                  checked={formData.businessType === "B2B"}
-                  onChange={handleInputChange}
-                />
-                B2B
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="businessType"
-                  value="B2C"
-                  checked={formData.businessType === "B2C"}
-                  onChange={handleInputChange}
-                />
-                B2C
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="businessType"
-                  value="B2B2C"
-                  checked={formData.businessType === "B2B2C"}
-                  onChange={handleInputChange}
-                />
-                B2B2C
-              </label>
+          <div className="space-y-2">
+            <Label>Business type *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["B2B", "B2C", "B2B2C"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="businessType"
+                    value={option}
+                    required
+                    checked={formData.businessType === option}
+                    onChange={handleInputChange}
+                    className="accent-primary"
+                  />
+                  <span className="text-sm">{option}</span>
+                </label>
+              ))}
             </div>
           </div>
 
-          <div>
-            <label>Offering format *</label>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="offeringFormat"
-                  value="Online/Digital product"
-                  required
-                  checked={formData.offeringFormat === "Online/Digital product"}
-                  onChange={handleInputChange}
-                />
-                Online/Digital product
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="offeringFormat"
-                  value="Physical product (shipped)"
-                  checked={
-                    formData.offeringFormat === "Physical product (shipped)"
-                  }
-                  onChange={handleInputChange}
-                />
-                Physical product (shipped)
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="offeringFormat"
-                  value="In-person service"
-                  checked={formData.offeringFormat === "In-person service"}
-                  onChange={handleInputChange}
-                />
-                In-person service
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="offeringFormat"
-                  value="Hybrid"
-                  checked={formData.offeringFormat === "Hybrid"}
-                  onChange={handleInputChange}
-                />
-                Hybrid
-              </label>
+          <div className="space-y-2">
+            <Label>Offering format *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["Online/Digital product", "Physical product (shipped)", "In-person service", "Hybrid"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="offeringFormat"
+                    value={option}
+                    required
+                    checked={formData.offeringFormat === option}
+                    onChange={handleInputChange}
+                    className="accent-primary"
+                  />
+                  <span className="text-sm">{option}</span>
+                </label>
+              ))}
             </div>
           </div>
 
-          <div>
-            <label>Revenue model *</label>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="revenueModel"
-                  value="Subscription"
-                  required
-                  checked={formData.revenueModel === "Subscription"}
-                  onChange={handleInputChange}
-                />
-                Subscription
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="revenueModel"
-                  value="One-time purchase"
-                  checked={formData.revenueModel === "One-time purchase"}
-                  onChange={handleInputChange}
-                />
-                One-time purchase
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="revenueModel"
-                  value="Usage-based"
-                  checked={formData.revenueModel === "Usage-based"}
-                  onChange={handleInputChange}
-                />
-                Usage-based
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="revenueModel"
-                  value="Transactional"
-                  checked={formData.revenueModel === "Transactional"}
-                  onChange={handleInputChange}
-                />
-                Transactional
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="revenueModel"
-                  value="Hybrid"
-                  checked={formData.revenueModel === "Hybrid"}
-                  onChange={handleInputChange}
-                />
-                Hybrid
-              </label>
+          <div className="space-y-2">
+            <Label>Revenue model *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["Subscription", "One-time purchase", "Usage-based", "Transactional", "Hybrid"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="revenueModel"
+                    value={option}
+                    required
+                    checked={formData.revenueModel === option}
+                    onChange={handleInputChange}
+                    className="accent-primary"
+                  />
+                  <span className="text-sm">{option}</span>
+                </label>
+              ))}
             </div>
           </div>
 
-          <div>
-            <label>Current monthly revenue range *</label>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyRevenue"
-                  value="Pre-revenue"
-                  required
-                  checked={formData.monthlyRevenue === "Pre-revenue"}
-                  onChange={handleInputChange}
-                />
-                Pre-revenue
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyRevenue"
-                  value="$1–$10k"
-                  checked={formData.monthlyRevenue === "$1–$10k"}
-                  onChange={handleInputChange}
-                />
-                $1–$10k
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyRevenue"
-                  value="$10k–$50k"
-                  checked={formData.monthlyRevenue === "$10k–$50k"}
-                  onChange={handleInputChange}
-                />
-                $10k–$50k
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyRevenue"
-                  value="$50k–$200k"
-                  checked={formData.monthlyRevenue === "$50k–$200k"}
-                  onChange={handleInputChange}
-                />
-                $50k–$200k
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyRevenue"
-                  value="$200k–$1M"
-                  checked={formData.monthlyRevenue === "$200k–$1M"}
-                  onChange={handleInputChange}
-                />
-                $200k–$1M
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyRevenue"
-                  value="$1M+"
-                  checked={formData.monthlyRevenue === "$1M+"}
-                  onChange={handleInputChange}
-                />
-                $1M+
-              </label>
+          <div className="space-y-2">
+            <Label>Current monthly revenue range *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["Pre-revenue", "$1–$10k", "$10k–$50k", "$50k–$200k", "$200k–$1M", "$1M+"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="monthlyRevenue"
+                    value={option}
+                    required
+                    checked={formData.monthlyRevenue === option}
+                    onChange={handleInputChange}
+                    className="accent-primary"
+                  />
+                  <span className="text-sm">{option}</span>
+                </label>
+              ))}
             </div>
           </div>
 
-          <div>
-            <label>Team size *</label>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="teamSize"
-                  value="Solo"
-                  required
-                  checked={formData.teamSize === "Solo"}
-                  onChange={handleInputChange}
-                />
-                Solo
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="teamSize"
-                  value="2–5"
-                  checked={formData.teamSize === "2–5"}
-                  onChange={handleInputChange}
-                />
-                2–5
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="teamSize"
-                  value="6–15"
-                  checked={formData.teamSize === "6–15"}
-                  onChange={handleInputChange}
-                />
-                6–15
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="teamSize"
-                  value="16–50"
-                  checked={formData.teamSize === "16–50"}
-                  onChange={handleInputChange}
-                />
-                16–50
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="teamSize"
-                  value="50+"
-                  checked={formData.teamSize === "50+"}
-                  onChange={handleInputChange}
-                />
-                50+
-              </label>
+          <div className="space-y-2">
+            <Label>Team size *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["Solo", "2–5", "6–15", "16–50", "50+"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="teamSize"
+                    value={option}
+                    required
+                    checked={formData.teamSize === option}
+                    onChange={handleInputChange}
+                    className="accent-primary"
+                  />
+                  <span className="text-sm">{option}</span>
+                </label>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Section C — Marketing & Growth */}
-        <section>
-          <h2>Section C — Marketing & Growth</h2>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold border-b pb-2">Marketing & Growth</h2>
 
-          <div>
-            <label>Current marketing channels * (select all that apply)</label>
-            <div>
-              {[
-                "Organic social",
-                "Paid social",
-                "Search/SEO",
-                "Affiliates/partners",
-                "Email/SMS",
-                "YouTube/Content",
-                "Sales outbound",
-                "Other",
-              ].map((channel) => (
-                <label key={channel}>
+          <div className="space-y-2">
+            <Label>Current marketing channels * (select all that apply)</Label>
+            <div className="flex flex-wrap gap-4">
+              {["Organic social", "Paid social", "Search/SEO", "Affiliates/partners", "Email/SMS", "YouTube/Content", "Sales outbound", "Other"].map((channel) => (
+                <label key={channel} className="flex items-center gap-2">
                   <input
                     type="checkbox"
                     name="marketingChannels"
                     value={channel}
                     checked={formData.marketingChannels.includes(channel)}
                     onChange={handleCheckboxChange}
+                    className="accent-primary"
                   />
-                  {channel}
+                  <span className="text-sm">{channel}</span>
                 </label>
               ))}
             </div>
           </div>
 
-          <div>
-            <label>Current monthly marketing spend *</label>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyMarketingSpend"
-                  value="$0"
-                  required
-                  checked={formData.monthlyMarketingSpend === "$0"}
-                  onChange={handleInputChange}
-                />
-                $0
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyMarketingSpend"
-                  value="$1–$2,500"
-                  checked={formData.monthlyMarketingSpend === "$1–$2,500"}
-                  onChange={handleInputChange}
-                />
-                $1–$2,500
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyMarketingSpend"
-                  value="$2,500–$10k"
-                  checked={formData.monthlyMarketingSpend === "$2,500–$10k"}
-                  onChange={handleInputChange}
-                />
-                $2,500–$10k
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyMarketingSpend"
-                  value="$10k–$50k"
-                  checked={formData.monthlyMarketingSpend === "$10k–$50k"}
-                  onChange={handleInputChange}
-                />
-                $10k–$50k
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="monthlyMarketingSpend"
-                  value="$50k+"
-                  checked={formData.monthlyMarketingSpend === "$50k+"}
-                  onChange={handleInputChange}
-                />
-                $50k+
-              </label>
+          <div className="space-y-2">
+            <Label>Current monthly marketing spend *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["$0", "$1–$2,500", "$2,500–$10k", "$10k–$50k", "$50k+"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="monthlyMarketingSpend"
+                    value={option}
+                    required
+                    checked={formData.monthlyMarketingSpend === option}
+                    onChange={handleInputChange}
+                    className="accent-primary"
+                  />
+                  <span className="text-sm">{option}</span>
+                </label>
+              ))}
             </div>
           </div>
 
-          <div>
-            <label htmlFor="paidPlatforms">
-              If paid spend exists, what platforms?
-            </label>
-            <input
+          <div className="space-y-2">
+            <Label htmlFor="paidPlatforms">If paid spend exists, what platforms?</Label>
+            <Input
               type="text"
               id="paidPlatforms"
               name="paidPlatforms"
@@ -576,14 +347,12 @@ export default function AdvisoryApplicationPage() {
         </section>
 
         {/* Section D — What You Want Help With */}
-        <section>
-          <h2>Section D — What You Want Help With</h2>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold border-b pb-2">What You Want Help With</h2>
 
-          <div>
-            <label htmlFor="topOutcomes">
-              What are the top 1–2 outcomes you want in the next 90 days? *
-            </label>
-            <textarea
+          <div className="space-y-2">
+            <Label htmlFor="topOutcomes">What are the top 1–2 outcomes you want in the next 90 days? *</Label>
+            <Textarea
               id="topOutcomes"
               name="topOutcomes"
               required
@@ -592,20 +361,11 @@ export default function AdvisoryApplicationPage() {
             />
           </div>
 
-          <div>
-            <label>What is the biggest bottleneck right now? *</label>
-            <div>
-              {[
-                "Distribution",
-                "Conversion",
-                "Retention",
-                "Ops/systems",
-                "Product",
-                "Hiring/team",
-                "Finance/unit economics",
-                "Other",
-              ].map((bottleneck) => (
-                <label key={bottleneck}>
+          <div className="space-y-2">
+            <Label>What is the biggest bottleneck right now? *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["Distribution", "Conversion", "Retention", "Ops/systems", "Product", "Hiring/team", "Finance/unit economics", "Other"].map((bottleneck) => (
+                <label key={bottleneck} className="flex items-center gap-2">
                   <input
                     type="radio"
                     name="biggestBottleneck"
@@ -613,163 +373,92 @@ export default function AdvisoryApplicationPage() {
                     required
                     checked={formData.biggestBottleneck === bottleneck}
                     onChange={handleInputChange}
+                    className="accent-primary"
                   />
-                  {bottleneck}
+                  <span className="text-sm">{bottleneck}</span>
                 </label>
               ))}
             </div>
             {formData.biggestBottleneck === "Other" && (
-              <input
+              <Input
                 type="text"
                 name="bottleneckOther"
                 placeholder="Please specify"
                 value={formData.bottleneckOther}
                 onChange={handleInputChange}
+                className="mt-2"
               />
             )}
           </div>
 
-          <div>
-            <label>Timeline urgency *</label>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="timelineUrgency"
-                  value="ASAP (0–14 days)"
-                  required
-                  checked={formData.timelineUrgency === "ASAP (0–14 days)"}
-                  onChange={handleInputChange}
-                />
-                ASAP (0–14 days)
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="timelineUrgency"
-                  value="2–4 weeks"
-                  checked={formData.timelineUrgency === "2–4 weeks"}
-                  onChange={handleInputChange}
-                />
-                2–4 weeks
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="timelineUrgency"
-                  value="1–2 months"
-                  checked={formData.timelineUrgency === "1–2 months"}
-                  onChange={handleInputChange}
-                />
-                1–2 months
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="timelineUrgency"
-                  value="3+ months"
-                  checked={formData.timelineUrgency === "3+ months"}
-                  onChange={handleInputChange}
-                />
-                3+ months
-              </label>
+          <div className="space-y-2">
+            <Label>Timeline urgency *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["ASAP (0–14 days)", "2–4 weeks", "1–2 months", "3+ months"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="timelineUrgency"
+                    value={option}
+                    required
+                    checked={formData.timelineUrgency === option}
+                    onChange={handleInputChange}
+                    className="accent-primary"
+                  />
+                  <span className="text-sm">{option}</span>
+                </label>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Section E — Engagement Fit */}
-        <section>
-          <h2>Section E — Engagement Fit</h2>
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold border-b pb-2">Engagement Fit</h2>
 
-          <div>
-            <label>Preferred engagement type *</label>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="engagementType"
-                  value="Retainer (ongoing)"
-                  required
-                  checked={formData.engagementType === "Retainer (ongoing)"}
-                  onChange={handleInputChange}
-                />
-                Retainer (ongoing)
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="engagementType"
-                  value="Project-based (fixed scope)"
-                  checked={
-                    formData.engagementType === "Project-based (fixed scope)"
-                  }
-                  onChange={handleInputChange}
-                />
-                Project-based (fixed scope)
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="engagementType"
-                  value="Not sure"
-                  checked={formData.engagementType === "Not sure"}
-                  onChange={handleInputChange}
-                />
-                Not sure
-              </label>
+          <div className="space-y-2">
+            <Label>Preferred engagement type *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["Retainer (ongoing)", "Project-based (fixed scope)", "Not sure"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="engagementType"
+                    value={option}
+                    required
+                    checked={formData.engagementType === option}
+                    onChange={handleInputChange}
+                    className="accent-primary"
+                  />
+                  <span className="text-sm">{option}</span>
+                </label>
+              ))}
             </div>
           </div>
 
-          <div>
-            <label>Estimated budget for advisory *</label>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="advisoryBudget"
-                  value="Under $2,500/mo"
-                  required
-                  checked={formData.advisoryBudget === "Under $2,500/mo"}
-                  onChange={handleInputChange}
-                />
-                Under $2,500/mo
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="advisoryBudget"
-                  value="$2,500–$7,500/mo"
-                  checked={formData.advisoryBudget === "$2,500–$7,500/mo"}
-                  onChange={handleInputChange}
-                />
-                $2,500–$7,500/mo
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="advisoryBudget"
-                  value="$7,500–$15k/mo"
-                  checked={formData.advisoryBudget === "$7,500–$15k/mo"}
-                  onChange={handleInputChange}
-                />
-                $7,500–$15k/mo
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="advisoryBudget"
-                  value="$15k+/mo"
-                  checked={formData.advisoryBudget === "$15k+/mo"}
-                  onChange={handleInputChange}
-                />
-                $15k+/mo
-              </label>
+          <div className="space-y-2">
+            <Label>Estimated budget for advisory *</Label>
+            <div className="flex flex-wrap gap-4">
+              {["Under $2,500/mo", "$2,500–$7,500/mo", "$7,500–$15k/mo", "$15k+/mo"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="advisoryBudget"
+                    value={option}
+                    required
+                    checked={formData.advisoryBudget === option}
+                    onChange={handleInputChange}
+                    className="accent-primary"
+                  />
+                  <span className="text-sm">{option}</span>
+                </label>
+              ))}
             </div>
           </div>
 
-          <div>
-            <label htmlFor="anythingElse">Anything else we should know?</label>
-            <textarea
+          <div className="space-y-2">
+            <Label htmlFor="anythingElse">Anything else we should know?</Label>
+            <Textarea
               id="anythingElse"
               name="anythingElse"
               value={formData.anythingElse}
@@ -778,16 +467,8 @@ export default function AdvisoryApplicationPage() {
           </div>
         </section>
 
-        <button type="submit">Submit Application</button>
+        <Button type="submit" size="lg">Submit Application</Button>
       </form>
-
-      <footer>
-        <p>AlwaysLoading Ventures — Operator-Led Venture Studio & Advisory Firm</p>
-        <p>
-          Disclaimer: AlwaysLoading Ventures is not a registered investment
-          fund. All engagements are structured on a case-by-case basis.
-        </p>
-      </footer>
-    </main>
+    </div>
   );
 }
