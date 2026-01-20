@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { buttonVariants } from "@/lib/button-variants";
@@ -35,8 +36,15 @@ export function Header() {
     <header className="border-b">
       <div className="mx-auto max-w-5xl px-6 sm:px-8 py-4 flex items-center justify-between">
         {/* Brand */}
-        <Link href="/" className="font-semibold text-lg">
-          AlwaysLoading Ventures
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo-dark.svg"
+            alt="AlwaysLoading Ventures"
+            width={180}
+            height={48}
+            className="h-8 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
