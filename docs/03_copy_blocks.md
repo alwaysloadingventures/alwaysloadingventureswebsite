@@ -151,3 +151,95 @@ AlwaysLoading Ventures was built by operators who have scaled businesses from ze
 AlwaysLoading Ventures — Operator-Led Venture Studio & Advisory Firm
 
 Disclaimer: AlwaysLoading Ventures is not a registered investment fund. All engagements are structured on a case-by-case basis.
+
+---
+
+## HERO — EXECUTION PHILOSOPHY ADDITION
+
+**Execution Philosophy**  
+We leverage AI-assisted and agentic coding workflows to ship faster, automate operations, and build durable systems — without sacrificing quality, control, or accountability.
+
+---
+
+## HOW WE WORK
+
+We don’t operate like a traditional advisory firm. Our approach is designed for speed, accountability, and leverage.
+
+### Agentic Execution
+We use modern AI tooling and agentic workflows (Claude, Cursor, and internal agents) to accelerate delivery across product, systems, and operations — while keeping humans firmly in control of decisions.
+
+### Systems & Automation
+We design operational systems that scale: workflows, automations, internal tooling, reporting pipelines, and dashboards that reduce manual work and eliminate bottlenecks.
+
+### Growth & Distribution
+We help shape positioning, funnels, partnerships, and go-to-market systems so growth is engineered — not improvised.
+
+### Operating Cadence
+We establish execution rhythms: KPIs, feedback loops, accountability structures, and decision frameworks that compound over time.
+
+---
+
+## PROVEN OUTCOMES (ANONYMIZED)
+
+Outcomes are presented in anonymized form and shown on the homepage as individual case highlights rather than testimonials.
+
+- Company A: $0 → $250M in revenue in 4 years  
+- Company B: $0 → $20M in revenue in 2 years  
+- Company C: $0 → $2M in revenue in 1 year  
+- Company D: $0 → $10M in revenue in 1.5 years  
+
+Results reflect contributions as part of broader teams. Outcomes shown for context, not guarantees.
+
+---
+
+## ENGAGEMENT TYPES
+
+We work in a small number of high-conviction partnerships at any given time. Each engagement is designed around leverage, accountability, and alignment.
+
+### Advisory Engagements
+Structured advisory for founders and leadership teams who want hands-on guidance, systems design, and execution support — without outsourcing ownership.
+
+**Best for:**  
+Operators who retain control but want experienced execution support.
+
+**CTA:**  
+Apply for Advisory
+
+---
+
+### Strategic Partnerships
+In select cases, we partner more deeply — taking on execution responsibility and long-term alignment through equity-based structures.
+
+**Best for:**  
+Founders seeking an operator partner, not just advice.
+
+**CTA:**  
+Apply for Strategic Partnership
+
+---
+
+## TOOLING & SYSTEMS
+
+We are technology-forward by default. Our workflows combine modern development stacks, AI-assisted tooling, and operational automation to increase execution velocity.
+
+**Core Tools & Systems**
+- Claude Code  
+- Cursor  
+- Next.js / React  
+- Supabase  
+- Workflow Automation (n8n, internal systems)  
+- KPI & BI Dashboards  
+- Custom Internal Tooling
+
+---
+
+## READY TO MOVE FORWARD
+
+We work best with founders and operators who value execution, ownership, and long-term thinking.
+
+If that sounds like you, the next step is an application.
+
+**Primary CTA**  
+Apply to Work With Us
+
+---

@@ -11,7 +11,7 @@ export function Footer() {
             alt="AlwaysLoading Ventures"
             width={160}
             height={40}
-            className="h-20 w-auto"
+            className="h-6 w-auto"
           />
           <span className="text-muted-foreground">—</span>
           <p className="text-sm text-muted-foreground">
