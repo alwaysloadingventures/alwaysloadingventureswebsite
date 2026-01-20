@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { buttonVariants } from "@/lib/button-variants";
+import { cn } from "@/lib/utils";
 import {
   Sheet,
   SheetContent,
@@ -22,10 +24,16 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <header className="border-b">
-      <div className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8 py-4 flex items-center justify-between">
         {/* Brand */}
         <Link href="/" className="font-semibold text-lg">
           AlwaysLoading Ventures
@@ -37,7 +45,12 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground"
+              className={cn(
+                "text-sm transition-colors",
+                isActive(link.href)
+                  ? "text-foreground font-medium"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
             >
               {link.label}
             </Link>
@@ -61,7 +74,12 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-lg text-foreground"
+                  className={cn(
+                    "text-lg",
+                    isActive(link.href)
+                      ? "text-foreground font-medium"
+                      : "text-muted-foreground"
+                  )}
                 >
                   {link.label}
                 </Link>

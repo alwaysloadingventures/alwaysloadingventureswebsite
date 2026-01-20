@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui/separator";
 export function Footer() {
   return (
     <footer className="border-t mt-auto">
-      <div className="mx-auto max-w-5xl px-4 py-8">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8 py-10">
         <p className="font-medium">
           AlwaysLoading Ventures — Operator-Led Venture Studio & Advisory Firm
         </p>

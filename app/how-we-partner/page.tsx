@@ -1,18 +1,17 @@
+import { PageHeader } from "@/components/layout-primitives";
+
 export default function HowWePartnerPage() {
   return (
-    <div className="space-y-8">
-      <section className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">How We Partner</h1>
-        <p className="text-xl text-muted-foreground">
-          We don't believe in one-size-fits-all engagements. Every partnership
-          is structured around outcomes, incentives, and execution
-          responsibility.
-        </p>
-      </section>
+    <div className="space-y-12">
+      <PageHeader
+        eyebrow="Partnership Models"
+        title="How We Partner"
+        description="We don't believe in one-size-fits-all engagements. Every partnership is structured around outcomes, incentives, and execution responsibility."
+      />
 
-      <section className="space-y-3">
-        <h2 className="text-2xl font-semibold">Engagement Models</h2>
-        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Engagement Models</h2>
+        <ul className="list-disc list-inside space-y-2 text-base sm:text-lg leading-relaxed text-muted-foreground">
           <li>
             <strong className="text-foreground">Advisory:</strong> Retainers or
             defined projects
@@ -27,9 +26,9 @@ export default function HowWePartnerPage() {
         </ul>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-2xl font-semibold">What We Don't Do</h2>
-        <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">What We Don't Do</h2>
+        <ul className="list-disc list-inside space-y-2 text-base sm:text-lg leading-relaxed text-muted-foreground">
           <li>No generic coaching or courses</li>
           <li>No free consulting</li>
           <li>No passive investing</li>
