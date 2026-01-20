@@ -33,31 +33,31 @@ export function Header() {
   };
 
   return (
-    <header className="border-b">
-      <div className="mx-auto max-w-5xl px-6 sm:px-8 py-4 flex items-center justify-between">
-        {/* Brand */}
+    <header className="border-b border-border/50">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8 py-5 sm:py-6 flex items-center justify-between">
+        {/* Brand - dominant visual element */}
         <Link href="/" className="flex items-center">
           <Image
             src="/logo-dark.svg"
             alt="AlwaysLoading Ventures"
-            width={180}
-            height={48}
-            className="h-8 w-auto"
+            width={280}
+            height={56}
+            className="h-11 sm:h-14 w-auto"
             priority
           />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        {/* Desktop Nav - secondary visual weight */}
+        <nav className="hidden lg:flex items-center gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm transition-colors",
+                "text-[13px] tracking-wide transition-colors",
                 isActive(link.href)
-                  ? "text-foreground font-medium"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "text-foreground/90 font-medium"
+                  : "text-muted-foreground/80 hover:text-foreground/90"
               )}
             >
               {link.label}
@@ -70,7 +70,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger className={`md:hidden ${buttonVariants({ variant: "ghost", size: "icon" })}`}>
+          <SheetTrigger className={`lg:hidden ${buttonVariants({ variant: "ghost", size: "icon" })}`}>
             <Menu className="h-5 w-5" />
             <span className="sr-only">Toggle menu</span>
           </SheetTrigger>

@@ -22,7 +22,7 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 export function Section({ children, className, ...props }: SectionProps) {
   return (
     <section
-      className={cn("py-14 sm:py-16", className)}
+      className={cn("py-12 sm:py-16", className)}
       {...props}
     >
       {children}
@@ -41,15 +41,15 @@ export function PageHeader({ eyebrow, title, description, className }: PageHeade
   return (
     <div className={cn("space-y-4", className)}>
       {eyebrow && (
-        <p className="uppercase text-xs tracking-widest text-muted-foreground">
+        <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
           {eyebrow}
         </p>
       )}
-      <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
         {title}
       </h1>
       {description && (
-        <p className="text-lg sm:text-xl leading-relaxed text-muted-foreground max-w-3xl">
+        <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-2xl">
           {description}
         </p>
       )}

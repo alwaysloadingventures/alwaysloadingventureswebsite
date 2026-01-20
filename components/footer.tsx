@@ -3,23 +3,23 @@ import { Separator } from "@/components/ui/separator";
 
 export function Footer() {
   return (
-    <footer className="border-t mt-auto">
-      <div className="mx-auto max-w-5xl px-6 sm:px-8 py-10">
-        <div className="flex items-center gap-3">
+    <footer className="border-t border-border/50 mt-auto">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8 py-12">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-4">
           <Image
             src="/logo-dark.svg"
             alt="AlwaysLoading Ventures"
-            width={160}
-            height={40}
-            className="h-6 w-auto"
+            width={220}
+            height={44}
+            className="h-9 sm:h-10 w-auto"
           />
-          <span className="text-muted-foreground">—</span>
-          <p className="text-sm text-muted-foreground">
+          <span className="hidden sm:block text-muted-foreground/50">—</span>
+          <p className="text-sm text-muted-foreground/70">
             Operator-Led Venture Studio & Advisory Firm
           </p>
         </div>
-        <Separator className="my-4" />
-        <p className="text-sm text-muted-foreground">
+        <Separator className="my-6 bg-border/50" />
+        <p className="text-xs text-muted-foreground/60 leading-relaxed max-w-2xl">
           Disclaimer: AlwaysLoading Ventures is not a registered investment
           fund. All engagements are structured on a case-by-case basis.
         </p>
