@@ -6,7 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-export interface ShowcaseItem {
+export interface HeroShowcaseItem {
+  id: string;
   title: string;
   caption: string;
   src?: string;
@@ -14,31 +15,29 @@ export interface ShowcaseItem {
   component?: React.ReactNode;
 }
 
-export interface ResizableShowcaseProps {
-  left: React.ReactNode;
-  title: string;
-  subtitle?: string;
-  chips?: string[];
-  items: ShowcaseItem[];
+export interface PageHeroProps {
+  children: React.ReactNode;
+  showcaseTitle: string;
+  showcaseSubtitle?: string;
+  showcaseChips?: string[];
+  showcaseItems: HeroShowcaseItem[];
   defaultIndex?: number;
 }
 
-export function ResizableShowcase({
-  left,
-  title,
-  subtitle,
-  chips,
-  items,
+export function PageHero({
+  children,
+  showcaseTitle,
+  showcaseSubtitle,
+  showcaseChips,
+  showcaseItems,
   defaultIndex = 0,
-}: ResizableShowcaseProps) {
+}: PageHeroProps) {
   const [activeIndex, setActiveIndex] = React.useState(defaultIndex);
 
-  // Enforce no defaults - must have at least 2 items
-  if (!items || items.length < 2) {
+  // Enforce minimum items
+  if (!showcaseItems || showcaseItems.length < 2) {
     if (process.env.NODE_ENV === "development") {
-      console.warn(
-        "ResizableShowcase: items array must have at least 2 items"
-      );
+      console.warn("PageHero: showcaseItems array must have at least 2 items");
     }
     return null;
   }
@@ -51,20 +50,18 @@ export function ResizableShowcase({
         <div className="absolute top-1/3 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-primary/[0.04] blur-[120px] rounded-full" />
       </div>
 
-      {/* Desktop: Fixed two-column layout */}
-      <div className="hidden lg:flex rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm shadow-md ring-1 ring-inset ring-white/[0.03] overflow-hidden min-h-[480px]">
-        {/* Left Panel - Page Content */}
-        <div className="flex-1 p-6 sm:p-10 flex flex-col justify-center">
-          {left}
-        </div>
+      {/* Desktop: Two-column grid layout */}
+      <div className="hidden lg:grid grid-cols-2 gap-10 items-center rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm shadow-md ring-1 ring-inset ring-white/[0.03] overflow-hidden p-8 lg:p-10">
+        {/* Left Column - Content */}
+        <div className="max-w-xl space-y-6">{children}</div>
 
-        {/* Right Panel - Showcase */}
-        <div className="w-[45%] p-4 sm:p-6 flex items-center border-l border-border/30">
-          <ShowcaseCard
-            title={title}
-            subtitle={subtitle}
-            chips={chips}
-            items={items}
+        {/* Right Column - Showcase Card */}
+        <div className="max-w-[520px] w-full justify-self-end">
+          <HeroMediaCard
+            title={showcaseTitle}
+            subtitle={showcaseSubtitle}
+            chips={showcaseChips}
+            items={showcaseItems}
             activeIndex={activeIndex}
             setActiveIndex={setActiveIndex}
           />
@@ -74,17 +71,17 @@ export function ResizableShowcase({
       {/* Mobile: Stacked layout */}
       <div className="lg:hidden space-y-4">
         {/* Content Card */}
-        <div className="rounded-2xl border border-border/40 bg-card/50 p-6 sm:p-10 backdrop-blur-sm shadow-md ring-1 ring-inset ring-white/[0.03]">
-          {left}
+        <div className="rounded-2xl border border-border/40 bg-card/50 p-6 sm:p-8 backdrop-blur-sm shadow-md ring-1 ring-inset ring-white/[0.03] space-y-6">
+          {children}
         </div>
 
         {/* Showcase Card */}
         <div className="px-1">
-          <ShowcaseCard
-            title={title}
-            subtitle={subtitle}
-            chips={chips}
-            items={items}
+          <HeroMediaCard
+            title={showcaseTitle}
+            subtitle={showcaseSubtitle}
+            chips={showcaseChips}
+            items={showcaseItems}
             activeIndex={activeIndex}
             setActiveIndex={setActiveIndex}
           />
@@ -94,25 +91,25 @@ export function ResizableShowcase({
   );
 }
 
-interface ShowcaseCardProps {
+interface HeroMediaCardProps {
   title: string;
   subtitle?: string;
   chips?: string[];
-  items: ShowcaseItem[];
+  items: HeroShowcaseItem[];
   activeIndex: number;
   setActiveIndex: (index: number) => void;
 }
 
-function ShowcaseCard({
+function HeroMediaCard({
   title,
   subtitle,
   chips,
   items,
   activeIndex,
   setActiveIndex,
-}: ShowcaseCardProps) {
+}: HeroMediaCardProps) {
   return (
-    <Card className="w-full border-border/30 bg-card/60 shadow-lg ring-1 ring-inset ring-primary/[0.08] backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:ring-primary/15">
+    <Card className="w-full border-border/30 bg-card/60 shadow-lg ring-1 ring-inset ring-primary/[0.08] backdrop-blur-sm overflow-hidden">
       {/* Subtle glow effect */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/8 blur-[100px] rounded-full" />
@@ -143,11 +140,11 @@ function ShowcaseCard({
       </CardHeader>
 
       <CardContent className="space-y-3 pb-4">
-        {/* Image/Component display area */}
+        {/* Media display area - consistent 16:9 aspect ratio */}
         <div className="relative aspect-[16/9] rounded-lg overflow-hidden border border-border/20 bg-background/50">
           {items.map((item, index) => (
             <div
-              key={item.title}
+              key={item.id}
               className={cn(
                 "absolute inset-0 transition-opacity duration-300",
                 index === activeIndex ? "opacity-100" : "opacity-0"
@@ -168,11 +165,11 @@ function ShowcaseCard({
           ))}
         </div>
 
-        {/* Tab buttons */}
+        {/* Tab buttons - consistent sizing */}
         <div className="flex gap-2">
           {items.map((item, index) => (
             <button
-              key={item.title}
+              key={item.id}
               onClick={() => setActiveIndex(index)}
               className={cn(
                 "flex-1 px-2 py-1.5 rounded-md text-[11px] sm:text-xs font-medium transition-all duration-200",

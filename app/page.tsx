@@ -22,7 +22,12 @@ import {
 import { getLatestPosts } from "@/lib/blog";
 import { BlogCard } from "@/components/blog-card";
 import { TrackRecordChart } from "@/components/track-record/track-record-chart";
-import { HeroSection } from "@/components/hero-section";
+import { PageHero } from "@/components/sections/PageHero";
+import {
+  SystemsDashboardViz,
+  AutomationPipelineViz,
+  DistributionAnalyticsViz,
+} from "@/components/illustrations/home";
 
 const provenOutcomes = [
   { label: "Company A", industry: "Trading Tech / Fintech Adjacent", result: "$0 → $250M", timeframe: "4 years" },
@@ -74,11 +79,79 @@ const toolbox = [
   },
 ];
 
+const homeShowcaseItems = [
+  {
+    id: "systems",
+    title: "Systems",
+    caption: "Dashboard & metrics",
+    component: <SystemsDashboardViz />,
+  },
+  {
+    id: "automation",
+    title: "Automation",
+    caption: "Pipeline execution",
+    component: <AutomationPipelineViz />,
+  },
+  {
+    id: "distribution",
+    title: "Distribution",
+    caption: "Channel analytics",
+    component: <DistributionAnalyticsViz />,
+  },
+];
+
 export default function HomePage() {
   return (
     <div className="space-y-16 sm:space-y-24">
-      {/* Hero Section with resizable media panel */}
-      <HeroSection />
+      {/* Hero Section */}
+      <PageHero
+        showcaseTitle="Execution in Motion"
+        showcaseSubtitle="Systems. Automation. Distribution. Shipping."
+        showcaseChips={["Dashboards", "Automation", "Distribution"]}
+        showcaseItems={homeShowcaseItems}
+      >
+        <div className="flex items-center gap-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Operator-Led
+          </p>
+          <Badge variant="secondary" className="text-[11px]">
+            Venture Studio
+          </Badge>
+        </div>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+          Venture Studio & Advisory Firm
+        </h1>
+        <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+          We partner with founders and operators to scale businesses through
+          execution, systems, and strategic leadership — not just advice.
+        </p>
+        <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+          We leverage AI-assisted operations and deep operator experience to
+          drive outcomes faster. From paid advisory to equity partnerships, we
+          work where we can materially move outcomes.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 pt-4">
+          <Link
+            href="/apply/advisory"
+            className={buttonVariants({
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            Apply for Advisory
+          </Link>
+          <Link
+            href="/apply/partnership"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            Apply for Strategic Partnership
+          </Link>
+        </div>
+      </PageHero>
 
       {/* Proven Outcomes - 4 mini cards */}
       <section className="space-y-6">

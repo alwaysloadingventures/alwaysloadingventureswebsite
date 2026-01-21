@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ResizableShowcase } from "@/components/marketing/resizable-showcase";
+import { PageHero } from "@/components/sections/PageHero";
 import {
   WeeklyOperatorSyncViz,
   ExecutionBacklogViz,
@@ -30,16 +30,19 @@ import {
 
 const showcaseItems = [
   {
+    id: "sync",
     title: "Weekly Operator Sync",
     caption: "Structured sessions focused on decisions, blockers, and execution — not theory.",
     component: <WeeklyOperatorSyncViz />,
   },
   {
+    id: "backlog",
     title: "Execution Backlog",
     caption: "A prioritized operating backlog that translates ideas into shipped outcomes.",
     component: <ExecutionBacklogViz />,
   },
   {
+    id: "metrics",
     title: "Metrics & Feedback Loops",
     caption: "Fast feedback cycles that turn data into better decisions and tighter systems.",
     component: <MetricsFeedbackLoopsViz />,
@@ -143,52 +146,49 @@ const successOutcomes = [
 export default function AdvisoryPage() {
   return (
     <div className="space-y-16 sm:space-y-24">
-      <ResizableShowcase
-        title="Operator Support"
-        subtitle="Hands-on advisory built around execution."
-        chips={["Cadence", "Backlog", "Feedback loops"]}
-        items={showcaseItems}
-        left={
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-                Work With Us
-              </p>
-              <Badge variant="secondary" className="text-[11px]">Advisory</Badge>
-            </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
-              Advisory
-            </h1>
-            <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
-              Operator-grade advisory for founders and leadership teams who want execution clarity, systems, and measurable progress.
-            </p>
-            <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
-              We work alongside you — diagnosing bottlenecks, installing systems, and driving outcomes. Not theory or frameworks that sit in a deck.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <Link
-                href="/apply/advisory"
-                className={buttonVariants({
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                Apply for Advisory
-              </Link>
-              <Link
-                href="/how-we-partner"
-                className={buttonVariants({
-                  variant: "outline",
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                How We Partner
-              </Link>
-            </div>
-          </div>
-        }
-      />
+      <PageHero
+        showcaseTitle="Operator Support"
+        showcaseSubtitle="Hands-on advisory built around execution."
+        showcaseChips={["Cadence", "Backlog", "Feedback loops"]}
+        showcaseItems={showcaseItems}
+      >
+        <div className="flex items-center gap-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Work With Us
+          </p>
+          <Badge variant="secondary" className="text-[11px]">Advisory</Badge>
+        </div>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+          Advisory
+        </h1>
+        <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+          Operator-grade advisory for founders and leadership teams who want execution clarity, systems, and measurable progress.
+        </p>
+        <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+          We work alongside you — diagnosing bottlenecks, installing systems, and driving outcomes. Not theory or frameworks that sit in a deck.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 pt-4">
+          <Link
+            href="/apply/advisory"
+            className={buttonVariants({
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            Apply for Advisory
+          </Link>
+          <Link
+            href="/how-we-partner"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            How We Partner
+          </Link>
+        </div>
+      </PageHero>
 
       <Separator className="bg-border/40" />
 

@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ResizableShowcase } from "@/components/marketing/resizable-showcase";
+import { PageHero } from "@/components/sections/PageHero";
 import {
   VentureBlueprintViz,
   DistributionEngineViz,
@@ -30,16 +30,19 @@ import {
 
 const showcaseItems = [
   {
+    id: "blueprint",
     title: "Venture Blueprint",
     caption: "Structured foundations across product, operations, and distribution before scaling begins.",
     component: <VentureBlueprintViz />,
   },
   {
+    id: "distribution",
     title: "Distribution Engine",
     caption: "Growth systems designed to compound — not spike and decay.",
     component: <DistributionEngineViz />,
   },
   {
+    id: "scale",
     title: "Scale Infrastructure",
     caption: "Systems that support growth without breaking compliance, performance, or trust.",
     component: <ScaleInfrastructureViz />,
@@ -156,52 +159,49 @@ const alignmentPrinciples = [
 export default function VentureStudioPage() {
   return (
     <div className="space-y-16 sm:space-y-24">
-      <ResizableShowcase
-        title="Build With Us"
-        subtitle="Co-building ventures with operators in the room."
-        chips={["Blueprint", "Distribution", "Scale"]}
-        items={showcaseItems}
-        left={
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-                Build With Us
-              </p>
-              <Badge variant="secondary" className="text-[11px]">Venture Studio</Badge>
-            </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
-              Venture Studio
-            </h1>
-            <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
-              We build and scale businesses alongside founders — not from the sidelines. This is hands-on, operator-led collaboration.
-            </p>
-            <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
-              We work with a very small number of ventures at a time — typically 1-2 active projects — because this model requires real commitment. When we say yes, we're all in.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <Link
-                href="/apply/partnership"
-                className={buttonVariants({
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                Apply for Partnership
-              </Link>
-              <Link
-                href="/how-we-partner"
-                className={buttonVariants({
-                  variant: "outline",
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                How We Partner
-              </Link>
-            </div>
-          </div>
-        }
-      />
+      <PageHero
+        showcaseTitle="Build With Us"
+        showcaseSubtitle="Co-building ventures with operators in the room."
+        showcaseChips={["Blueprint", "Distribution", "Scale"]}
+        showcaseItems={showcaseItems}
+      >
+        <div className="flex items-center gap-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Build With Us
+          </p>
+          <Badge variant="secondary" className="text-[11px]">Venture Studio</Badge>
+        </div>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+          Venture Studio
+        </h1>
+        <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+          We build and scale businesses alongside founders — not from the sidelines. This is hands-on, operator-led collaboration.
+        </p>
+        <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+          We work with a very small number of ventures at a time — typically 1-2 active projects — because this model requires real commitment. When we say yes, we're all in.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 pt-4">
+          <Link
+            href="/apply/partnership"
+            className={buttonVariants({
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            Apply for Partnership
+          </Link>
+          <Link
+            href="/how-we-partner"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            How We Partner
+          </Link>
+        </div>
+      </PageHero>
 
       <Separator className="bg-border/40" />
 

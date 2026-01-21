@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ResizableShowcase } from "@/components/marketing/resizable-showcase";
+import { PageHero } from "@/components/sections/PageHero";
 import {
   WeeklyOperatingCadenceViz,
   ExecutionTimelineViz,
@@ -30,16 +30,19 @@ import {
 
 const showcaseItems = [
   {
+    id: "cadence",
     title: "Weekly Operating Rhythm",
     caption: "A consistent execution cadence with priorities, owners, and measurable outcomes.",
     component: <WeeklyOperatingCadenceViz />,
   },
   {
+    id: "execution",
     title: "90-Day Execution Plan",
     caption: "Focused sprints that turn strategy into shipped systems and measurable progress.",
     component: <ExecutionTimelineViz />,
   },
   {
+    id: "decisions",
     title: "Decision Access & Alignment",
     caption: "Clear decision rights and incentives aligned with execution, not politics.",
     component: <DecisionRightsMatrixViz />,
@@ -185,52 +188,49 @@ const exclusions = [
 export default function HowWePartnerPage() {
   return (
     <div className="space-y-16 sm:space-y-24">
-      <ResizableShowcase
-        title="Operating Cadence"
-        subtitle="Clarity, accountability, and measurable progress."
-        chips={["Weekly cadence", "KPIs", "Ownership"]}
-        items={showcaseItems}
-        left={
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-                Partnership Models
-              </p>
-              <Badge variant="secondary" className="text-[11px]">Process</Badge>
-            </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
-              How We Partner
-            </h1>
-            <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
-              We work with trading platforms, prediction markets, digital subscription businesses, and regulated gaming operators.
-            </p>
-            <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
-              Every engagement is structured around outcomes, incentives, and execution — not just advice. We move fast and expect the same from partners.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <Link
-                href="/apply"
-                className={buttonVariants({
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                Apply to Work With Us
-              </Link>
-              <Link
-                href="/what-we-do"
-                className={buttonVariants({
-                  variant: "outline",
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                What We Do
-              </Link>
-            </div>
-          </div>
-        }
-      />
+      <PageHero
+        showcaseTitle="Operating Cadence"
+        showcaseSubtitle="Clarity, accountability, and measurable progress."
+        showcaseChips={["Weekly cadence", "KPIs", "Ownership"]}
+        showcaseItems={showcaseItems}
+      >
+        <div className="flex items-center gap-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Partnership Models
+          </p>
+          <Badge variant="secondary" className="text-[11px]">Process</Badge>
+        </div>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+          How We Partner
+        </h1>
+        <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+          We work with trading platforms, prediction markets, digital subscription businesses, and regulated gaming operators.
+        </p>
+        <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+          Every engagement is structured around outcomes, incentives, and execution — not just advice. We move fast and expect the same from partners.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 pt-4">
+          <Link
+            href="/apply"
+            className={buttonVariants({
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            Apply to Work With Us
+          </Link>
+          <Link
+            href="/what-we-do"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            What We Do
+          </Link>
+        </div>
+      </PageHero>
 
       {/* How It Works */}
       <section className="space-y-8">

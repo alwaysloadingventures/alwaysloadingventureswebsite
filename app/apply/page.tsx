@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ResizableShowcase } from "@/components/marketing/resizable-showcase";
+import { PageHero } from "@/components/sections/PageHero";
 import {
   FitAssessmentViz,
   DiscoveryStructuringViz,
@@ -30,16 +30,19 @@ import {
 
 const showcaseItems = [
   {
+    id: "fit",
     title: "Fit Assessment",
     caption: "We evaluate alignment, execution readiness, and where we can materially move outcomes.",
     component: <FitAssessmentViz />,
   },
   {
+    id: "discovery",
     title: "Discovery & Structuring",
     caption: "Clear scoping of engagement model, responsibilities, and success criteria.",
     component: <DiscoveryStructuringViz />,
   },
   {
+    id: "onboarding",
     title: "Onboarding & Execution",
     caption: "Fast onboarding into operating cadence, tooling, and execution rhythm.",
     component: <OnboardingExecutionViz />,
@@ -75,52 +78,49 @@ const partnershipReasons = [
 export default function ApplyPage() {
   return (
     <div className="space-y-16 sm:space-y-24">
-      <ResizableShowcase
-        title="What to Expect"
-        subtitle="A clear path from fit check to execution."
-        chips={["Selective", "Structured", "Fast next steps"]}
-        items={showcaseItems}
-        left={
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-                Get Started
-              </p>
-              <Badge variant="secondary" className="text-[11px]">Apply</Badge>
-            </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
-              Apply to Work With Us
-            </h1>
-            <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
-              We work with a limited number of companies at a time. Applications help us confirm fit before any conversation.
-            </p>
-            <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
-              We're selective because we go deep. Choose the path that best reflects what you're looking for.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <Link
-                href="/apply/advisory"
-                className={buttonVariants({
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                Apply for Advisory
-              </Link>
-              <Link
-                href="/apply/partnership"
-                className={buttonVariants({
-                  variant: "outline",
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                Strategic Partnership
-              </Link>
-            </div>
-          </div>
-        }
-      />
+      <PageHero
+        showcaseTitle="What to Expect"
+        showcaseSubtitle="A clear path from fit check to execution."
+        showcaseChips={["Selective", "Structured", "Fast next steps"]}
+        showcaseItems={showcaseItems}
+      >
+        <div className="flex items-center gap-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Get Started
+          </p>
+          <Badge variant="secondary" className="text-[11px]">Apply</Badge>
+        </div>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+          Apply to Work With Us
+        </h1>
+        <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+          We work with a limited number of companies at a time. Applications help us confirm fit before any conversation.
+        </p>
+        <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+          We're selective because we go deep. Choose the path that best reflects what you're looking for.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 pt-4">
+          <Link
+            href="/apply/advisory"
+            className={buttonVariants({
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            Apply for Advisory
+          </Link>
+          <Link
+            href="/apply/partnership"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            Strategic Partnership
+          </Link>
+        </div>
+      </PageHero>
 
       {/* Two Application Paths */}
       <div className="grid gap-6 lg:grid-cols-2">

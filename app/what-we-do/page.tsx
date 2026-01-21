@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ResizableShowcase } from "@/components/marketing/resizable-showcase";
+import { PageHero } from "@/components/sections/PageHero";
 import {
   OperatorDashboardViz,
   AutomationWorkflowViz,
@@ -30,16 +30,19 @@ import {
 
 const showcaseItems = [
   {
+    id: "dashboard",
     title: "Operator Dashboard",
     caption: "A unified view of revenue, risk, growth, and execution — designed for fast decisions, not vanity metrics.",
     component: <OperatorDashboardViz />,
   },
   {
+    id: "automation",
     title: "Automation & AI Workflows",
     caption: "Internal systems that reduce manual work, surface insights faster, and let teams operate at scale.",
     component: <AutomationWorkflowViz />,
   },
   {
+    id: "distribution",
     title: "Distribution & Monetization",
     caption: "Distribution channels, pricing logic, and monetization systems engineered for sustainability.",
     component: <DistributionFunnelViz />,
@@ -130,52 +133,49 @@ const notForYouIf = [
 export default function WhatWeDoPage() {
   return (
     <div className="space-y-16 sm:space-y-24">
-      <ResizableShowcase
-        title="Execution Systems"
-        subtitle="Operator-grade systems for scaling monetized platforms."
-        chips={["Dashboards", "Automation", "Distribution"]}
-        items={showcaseItems}
-        left={
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-                Our Focus
-              </p>
-              <Badge variant="secondary" className="text-[11px]">What We Do</Badge>
-            </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
-              What We Do
-            </h1>
-            <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
-              We operate at the intersection of strategy, execution, and ownership. Our work is built for systems-driven, monetized platforms — trading tech, prediction markets, digital subscriptions, and regulated gaming operators.
-            </p>
-            <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
-              We've scaled revenue from zero to significant ARR across multiple ventures. We don't just advise — we build, ship, and iterate alongside the teams we work with.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <Link
-                href="/apply/advisory"
-                className={buttonVariants({
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                Apply for Advisory
-              </Link>
-              <Link
-                href="/apply/partnership"
-                className={buttonVariants({
-                  variant: "outline",
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                Explore Partnerships
-              </Link>
-            </div>
-          </div>
-        }
-      />
+      <PageHero
+        showcaseTitle="Execution Systems"
+        showcaseSubtitle="Operator-grade systems for scaling monetized platforms."
+        showcaseChips={["Dashboards", "Automation", "Distribution"]}
+        showcaseItems={showcaseItems}
+      >
+        <div className="flex items-center gap-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Our Focus
+          </p>
+          <Badge variant="secondary" className="text-[11px]">What We Do</Badge>
+        </div>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+          What We Do
+        </h1>
+        <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+          We operate at the intersection of strategy, execution, and ownership. Our work is built for systems-driven, monetized platforms — trading tech, prediction markets, digital subscriptions, and regulated gaming operators.
+        </p>
+        <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+          We've scaled revenue from zero to significant ARR across multiple ventures. We don't just advise — we build, ship, and iterate alongside the teams we work with.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 pt-4">
+          <Link
+            href="/apply/advisory"
+            className={buttonVariants({
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            Apply for Advisory
+          </Link>
+          <Link
+            href="/apply/partnership"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            Explore Partnerships
+          </Link>
+        </div>
+      </PageHero>
 
       <Separator className="bg-border/40" />
 

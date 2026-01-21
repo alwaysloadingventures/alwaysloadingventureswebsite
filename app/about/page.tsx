@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ResizableShowcase } from "@/components/marketing/resizable-showcase";
+import { PageHero } from "@/components/sections/PageHero";
 import {
   OperatorMindsetViz,
   TechnologyForwardViz,
@@ -30,16 +30,19 @@ import {
 
 const showcaseItems = [
   {
+    id: "mindset",
     title: "Operator Mindset",
     caption: "Built by operators who prioritize systems, incentives, and execution over noise.",
     component: <OperatorMindsetViz />,
   },
   {
+    id: "technology",
     title: "Technology-Forward Execution",
     caption: "AI, automation, and internal tooling used to compress timelines and reduce friction.",
     component: <TechnologyForwardViz />,
   },
   {
+    id: "value",
     title: "Long-Term Value Creation",
     caption: "We optimize for durability, not short-term optics.",
     component: <LongTermValueViz />,
@@ -144,52 +147,49 @@ const notAFitFor = [
 export default function AboutPage() {
   return (
     <div className="space-y-16 sm:space-y-24">
-      <ResizableShowcase
-        title="How We Operate"
-        subtitle="Systems-first. Technology-forward. Outcome-driven."
-        chips={["Systems", "Automation", "Durability"]}
-        items={showcaseItems}
-        left={
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-                Who We Are
-              </p>
-              <Badge variant="secondary" className="text-[11px]">About</Badge>
-            </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
-              About AlwaysLoading Ventures
-            </h1>
-            <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
-              An operator-led venture studio and advisory firm built around execution, systems, and long-term value creation.
-            </p>
-            <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
-              We're operators who have built and scaled businesses from zero. Now we partner with founders who want execution, not just advice.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <Link
-                href="/apply"
-                className={buttonVariants({
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                Apply to Work With Us
-              </Link>
-              <Link
-                href="/how-we-partner"
-                className={buttonVariants({
-                  variant: "outline",
-                  size: "lg",
-                  className: "w-full sm:w-auto px-8",
-                })}
-              >
-                How We Partner
-              </Link>
-            </div>
-          </div>
-        }
-      />
+      <PageHero
+        showcaseTitle="How We Operate"
+        showcaseSubtitle="Systems-first. Technology-forward. Outcome-driven."
+        showcaseChips={["Systems", "Automation", "Durability"]}
+        showcaseItems={showcaseItems}
+      >
+        <div className="flex items-center gap-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Who We Are
+          </p>
+          <Badge variant="secondary" className="text-[11px]">About</Badge>
+        </div>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+          About AlwaysLoading Ventures
+        </h1>
+        <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+          An operator-led venture studio and advisory firm built around execution, systems, and long-term value creation.
+        </p>
+        <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+          We're operators who have built and scaled businesses from zero. Now we partner with founders who want execution, not just advice.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 pt-4">
+          <Link
+            href="/apply"
+            className={buttonVariants({
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            Apply to Work With Us
+          </Link>
+          <Link
+            href="/how-we-partner"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "w-full sm:w-auto px-8",
+            })}
+          >
+            How We Partner
+          </Link>
+        </div>
+      </PageHero>
 
       <Separator className="bg-border/40" />
 
