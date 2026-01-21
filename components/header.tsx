@@ -19,7 +19,6 @@ const navLinks = [
   { href: "/how-we-partner", label: "How We Partner" },
   { href: "/venture-studio", label: "Venture Studio" },
   { href: "/advisory", label: "Advisory" },
-  { href: "/apply", label: "Apply" },
   { href: "/about", label: "About" },
 ];
 
@@ -34,7 +33,7 @@ export function Header() {
 
   return (
     <header className="border-b border-border/50">
-      <div className="mx-auto max-w-5xl px-6 sm:px-8 py-5 sm:py-6 flex items-center justify-between">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-between">
         {/* Brand - dominant visual element */}
         <Link href="/" className="flex items-center">
           <Image
@@ -42,22 +41,22 @@ export function Header() {
             alt="AlwaysLoading Ventures"
             width={280}
             height={56}
-            className="h-11 sm:h-14 w-auto"
+            className="h-[42px] sm:h-[52px] w-auto"
             priority
           />
         </Link>
 
         {/* Desktop Nav - secondary visual weight */}
-        <nav className="hidden lg:flex items-center gap-5">
+        <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "text-[13px] tracking-wide transition-colors",
+                "text-[12px] tracking-wide transition-colors",
                 isActive(link.href)
-                  ? "text-foreground/90 font-medium"
-                  : "text-muted-foreground/80 hover:text-foreground/90"
+                  ? "text-foreground/80 font-medium"
+                  : "text-muted-foreground/60 hover:text-foreground/80"
               )}
             >
               {link.label}
@@ -76,17 +75,17 @@ export function Header() {
           </SheetTrigger>
           <SheetContent side="right" className="px-6">
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-            <nav className="flex flex-col gap-5 mt-8">
+            <nav className="flex flex-col gap-4 mt-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "text-lg",
+                    "text-base tracking-wide",
                     isActive(link.href)
-                      ? "text-foreground font-medium"
-                      : "text-muted-foreground"
+                      ? "text-foreground/90 font-medium"
+                      : "text-muted-foreground/70 hover:text-foreground/90"
                   )}
                 >
                   {link.label}
@@ -95,7 +94,7 @@ export function Header() {
               <Link
                 href="/apply"
                 onClick={() => setOpen(false)}
-                className={buttonVariants({ size: "lg", className: "w-full mt-2" })}
+                className={buttonVariants({ size: "lg", className: "w-full mt-4" })}
               >
                 Apply
               </Link>
