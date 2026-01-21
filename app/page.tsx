@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { getLatestPosts } from "@/lib/blog";
 import { BlogCard } from "@/components/blog-card";
+import { TrackRecordChart } from "@/components/track-record/track-record-chart";
 
 const provenOutcomes = [
   { label: "Company A", industry: "Trading Tech / Fintech Adjacent", result: "$0 → $250M", timeframe: "4 years" },
@@ -158,17 +159,21 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-          <p className="text-[11px] text-muted-foreground/50 leading-relaxed">
-            Results reflect contributions as part of broader teams. Outcomes shown
-            for context, not guarantees.
+        {/* Growth Chart */}
+        <Card className="border-border/30 shadow-md bg-card/50 ring-1 ring-inset ring-white/[0.04] p-4 sm:p-6">
+          <TrackRecordChart />
+          <p className="text-[11px] text-muted-foreground/60 text-center mt-4 leading-relaxed max-w-xl mx-auto">
+            Anonymized outcomes shown for context. Results reflect contributions as part of broader teams and are not guarantees.
           </p>
+        </Card>
+
+        <div className="flex justify-center">
           <Link
             href="#operator-toolbox"
             className={buttonVariants({
               variant: "outline",
               size: "sm",
-              className: "w-fit text-xs",
+              className: "text-xs",
             })}
           >
             See the Operator Toolbox
