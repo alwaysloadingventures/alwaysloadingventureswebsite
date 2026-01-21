@@ -13,8 +13,8 @@ export default function BlogPage() {
           Blog
         </Badge>
         <PageHeader
-          title="Thoughts & Playbooks"
-          description="Tactical insights on growth, operations, product, and building scalable businesses. No fluff — just what works."
+          title="Thoughts & Experiments"
+          description="Operator-grade thinking on systems, execution, and scale. Practical insights from building and scaling businesses — not theory, not thought leadership, just what works."
         />
       </div>
 

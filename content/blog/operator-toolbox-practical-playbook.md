@@ -372,4 +372,20 @@ And increasingly, AI and automation are accelerants for every domain. Not replac
 
 ---
 
+## How AlwaysLoading Ventures Can Help
+
+This toolbox represents how we think about building and scaling businesses. At AlwaysLoading Ventures, we deploy these competencies across advisory engagements and venture studio partnerships.
+
+**For Advisory clients**, we help install these systems — KPI frameworks, operational processes, growth playbooks, and the automation that makes them run without constant founder attention.
+
+**For Strategic Partners**, we work alongside founders as operators — taking shared responsibility for execution across growth, product, operations, and systems design.
+
+If you're building a trading platform, prediction market, digital subscription business, or regulated platform and want an operator who thinks this way, we should talk.
+
+- **[Apply for Advisory](/apply/advisory)** — Hands-on support for teams ready to implement
+- **[Apply for Strategic Partnership](/apply/partnership)** — Deep operational involvement with equity alignment
+- **[Learn How We Partner](/how-we-partner)** — Explore our engagement models
+
+---
+
 *This is how we think about building. If it resonates with how you operate, we should talk.*

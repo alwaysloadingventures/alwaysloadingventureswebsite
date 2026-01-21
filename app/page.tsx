@@ -290,7 +290,7 @@ export default function HomePage() {
             Thoughts & Experiments
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
-            Tactical insights on growth, operations, product, and building scalable businesses.
+            Operator-grade thinking on systems, execution, and scale — not theory, just what works.
           </p>
         </div>
 
