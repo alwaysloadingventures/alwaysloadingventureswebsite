@@ -8,32 +8,33 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
 const advisoryReasons = [
-  "You need execution support, not just advice — we work alongside your team",
-  "You want structured accountability with clear KPIs and deliverables",
-  "You're ready to invest in getting expert guidance (this isn't free consulting)",
-  "You have a team that can implement — we help you prioritize and systematize",
-  "You're facing a specific challenge: growth, ops, product, or systems",
-  "You want access to proven frameworks and playbooks, not generic templates",
-  "You value direct, honest feedback over comfortable validation",
+  "You want execution clarity — not more advice that sits in a deck",
+  "You need systems installed: KPIs, dashboards, reporting cadence",
+  "You're ready for structured accountability with clear deliverables",
+  "You have a team that can implement and need strategic leverage",
+  "You want honest feedback, even when it's uncomfortable",
+  "You're facing specific challenges: growth, ops, product, or distribution",
+  "You value an operator's perspective over consultant frameworks",
   "You're open to AI and automation to accelerate execution",
   "You understand advisory is a partnership, not a service relationship",
-  "You're building something meaningful and want a thought partner invested in your success",
+  "You're building something meaningful and want measurable progress",
 ];
 
 const partnershipReasons = [
-  "You want a hands-on operating partner, not a passive investor or advisor",
+  "You want an operator in the trenches, not a passive investor",
   "You're comfortable with equity-based alignment — we succeed when you succeed",
-  "You're at an early or growth stage where operational help moves the needle",
-  "You want someone in the trenches: strategy, product, ops, and distribution",
-  "You're open to deep collaboration — weekly syncs, shared decisions, real accountability",
-  "You understand this is selective: we work with 1-2 studio ventures at a time",
-  "You're building in a space where we can add operational value",
+  "You need hands-on help across strategy, product, ops, and growth",
+  "You're open to deep collaboration: weekly syncs, shared decisions, real accountability",
+  "You understand this is selective — we work with 1-2 ventures at a time",
+  "You're building in a space where operational execution moves the needle",
   "You're ready for a long-term commitment (12+ months of active building)",
-  "You value transparency and direct communication, even when it's uncomfortable",
-  "You're not looking for capital alone — you want execution capacity and expertise",
+  "You value transparency and direct communication",
+  "You want execution capacity and expertise, not just capital",
+  "You're looking for a co-builder who takes shared responsibility for outcomes",
 ];
 
 export default function ApplyPage() {
@@ -41,21 +42,32 @@ export default function ApplyPage() {
     <div className="space-y-16">
       <PageHeader
         eyebrow="Get Started"
-        title="Apply"
-        description="We work with a limited number of companies at a time. Applications help us determine fit before any conversation."
+        title="Apply to Work With Us"
+        description="We work with a limited number of companies at a time. Applications help us confirm fit before any conversation."
       />
 
-      <p className="text-sm sm:text-base leading-relaxed text-muted-foreground/80 max-w-2xl">
-        Choose the path that best reflects what you're looking for. Not sure? Start with Advisory — it's easier to expand the relationship than to unwind a partnership.
-      </p>
+      {/* Intro Context */}
+      <section className="space-y-4 max-w-3xl">
+        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
+          We're selective because we go deep. Every engagement gets real attention — which means we can only work with a small number of companies at any given time.
+        </p>
+        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
+          Choose the path that best reflects what you're looking for. Not sure? Start with Advisory — it's easier to expand the relationship than to unwind a partnership.
+        </p>
+      </section>
 
+      {/* Two Application Paths */}
       <div className="grid gap-6 lg:grid-cols-2">
         <Card className="flex flex-col border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
           <CardHeader>
-            <CardTitle className="text-xl">Advisory</CardTitle>
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-xl">Advisory</CardTitle>
+              <Badge variant="secondary" className="text-[10px]">
+                Paid Engagement
+              </Badge>
+            </div>
             <CardDescription className="leading-relaxed">
-              Hands-on executive advisory for teams ready to implement.
-              Structured engagements with clear deliverables.
+              Hands-on, operator-grade advisory for founders and leadership teams ready to implement. Structured engagements with clear deliverables, KPIs, and accountability.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col flex-1">
@@ -70,10 +82,14 @@ export default function ApplyPage() {
 
         <Card className="flex flex-col border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
           <CardHeader>
-            <CardTitle className="text-xl">Strategic Partnership</CardTitle>
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-xl">Strategic Partnership</CardTitle>
+              <Badge variant="secondary" className="text-[10px]">
+                Equity-Based
+              </Badge>
+            </div>
             <CardDescription className="leading-relaxed">
-              Equity-based partnerships for ventures where we take an active
-              operational role alongside founders.
+              Deep operational involvement with equity alignment. We take an active role alongside founders — building, shipping, and scaling together.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col flex-1">
@@ -148,6 +164,34 @@ export default function ApplyPage() {
             </ol>
           </div>
         </div>
+      </section>
+
+      <Separator className="bg-border/40" />
+
+      {/* Strategic Partnership Note */}
+      <section className="space-y-6">
+        <div className="space-y-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Important Note
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
+            About Strategic Partnerships
+          </h2>
+        </div>
+
+        <Card className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
+          <CardContent className="pt-6 space-y-4 text-sm sm:text-base text-muted-foreground/80 leading-[1.7]">
+            <p>
+              Strategic partnerships involve equity or hybrid (cash + equity) structures. This is not passive investing — it's active operational involvement alongside founders.
+            </p>
+            <p>
+              We take shared responsibility for outcomes: strategy, systems, growth, product, and operations. In return, we expect transparency, decision-making access, and long-term alignment.
+            </p>
+            <p>
+              If you're looking for capital without operational involvement, or prefer to maintain full control without collaboration, this isn't the right fit. We work best with founders who want a true operating partner.
+            </p>
+          </CardContent>
+        </Card>
       </section>
 
       <Separator className="bg-border/40" />
