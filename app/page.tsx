@@ -23,10 +23,10 @@ import { getLatestPosts } from "@/lib/blog";
 import { BlogCard } from "@/components/blog-card";
 
 const provenOutcomes = [
-  { label: "Company A", industry: "Fintech", result: "$0 → $250M", timeframe: "4 years" },
-  { label: "Company B", industry: "E-commerce", result: "$0 → $20M", timeframe: "2 years" },
-  { label: "Company C", industry: "SaaS", result: "$0 → $2M", timeframe: "1 year" },
-  { label: "Company D", industry: "Marketplace", result: "$0 → $10M", timeframe: "1.5 years" },
+  { label: "Company A", industry: "Trading Tech / Fintech Adjacent", result: "$0 → $250M", timeframe: "4 years" },
+  { label: "Company B", industry: "Digital Products & Subscriptions", result: "$0 → $20M", timeframe: "2 years" },
+  { label: "Company C", industry: "Prediction Markets / Gaming", result: "$0 → $2M", timeframe: "1 year" },
+  { label: "Company D", industry: "Marketplace / E-commerce", result: "$0 → $10M", timeframe: "1.5 years" },
 ];
 
 const toolbox = [
@@ -135,24 +135,23 @@ export default function HomePage() {
             Proven Outcomes Across Multiple Ventures
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
-            We've been part of multiple businesses that scaled from zero to
-            meaningful revenue. Company names withheld due to confidentiality.
+            We've scaled ventures across trading platforms, prediction markets, digital products, and regulated gaming — from zero to meaningful revenue. Company names withheld due to confidentiality.
           </p>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {provenOutcomes.map((outcome) => (
             <Card key={outcome.label} size="sm" className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
-              <CardContent className="pt-4 space-y-1">
-                <div className="flex items-center gap-1.5">
-                  <p className="text-[11px] text-muted-foreground/70 tracking-wide uppercase">{outcome.label}</p>
-                  <span className="text-[10px] text-muted-foreground/50">({outcome.industry})</span>
-                </div>
+              <CardContent className="pt-4 space-y-1.5">
+                <p className="text-xs font-medium text-foreground/90 tracking-wide uppercase">{outcome.label}</p>
                 <p className="text-lg sm:text-xl font-semibold text-foreground tracking-tight">
                   {outcome.result}
                 </p>
-                <p className="text-xs sm:text-sm text-muted-foreground/70">
+                <p className="text-xs sm:text-sm text-muted-foreground/90">
                   in {outcome.timeframe}
+                </p>
+                <p className="text-[10px] text-muted-foreground/70 leading-tight">
+                  {outcome.industry}
                 </p>
               </CardContent>
             </Card>
