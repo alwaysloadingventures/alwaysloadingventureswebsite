@@ -14,95 +14,137 @@ import { Separator } from "@/components/ui/separator";
 const processSteps = [
   {
     step: "01",
-    title: "Application",
+    title: "Apply",
     description:
-      "You submit a brief application outlining your business, stage, challenges, and goals. This helps us understand if there's potential alignment.",
+      "Submit a brief application outlining your business, stage, key challenges, and goals. This helps us quickly assess alignment before scheduling any calls.",
   },
   {
     step: "02",
     title: "Fit Call",
     description:
-      "A 30-minute call to explore the opportunity, understand your context, and determine if we're the right partner for your needs.",
+      "A 30-minute conversation to explore your situation, understand context, and determine if we're the right fit. No pitch decks required — just an honest conversation.",
   },
   {
     step: "03",
-    title: "Diagnostic",
+    title: "Operator Diagnostic",
     description:
-      "For qualified opportunities, we conduct a deeper diagnostic — reviewing your operations, metrics, and blockers to identify high-leverage areas.",
+      "For qualified opportunities, we conduct a deeper review of your operations, metrics, and blockers. We identify the highest-leverage areas where we can move the needle.",
   },
   {
     step: "04",
-    title: "Plan + KPIs",
+    title: "Plan + KPI Scoreboard",
     description:
-      "We propose a tailored engagement plan with clear deliverables, timelines, and success metrics. No ambiguity — just aligned expectations.",
+      "We propose a tailored engagement plan with clear deliverables, timelines, ownership, and success metrics. No ambiguity — aligned expectations from day one.",
   },
   {
     step: "05",
     title: "Execution Cadence",
     description:
-      "We work alongside your team in a structured cadence — weekly syncs, async collaboration, and hands-on execution where needed.",
+      "We work alongside your team in a structured rhythm — weekly syncs, async collaboration, and hands-on execution where needed. We ship, not just advise.",
   },
   {
     step: "06",
     title: "Review & Iterate",
     description:
-      "Regular checkpoints to assess progress, adjust strategy, and ensure we're driving toward measurable outcomes.",
+      "Regular checkpoints to assess progress against KPIs, adjust strategy based on learnings, and ensure we're driving toward measurable outcomes.",
   },
 ];
 
 const engagementPackages = [
   {
     title: "Advisory Retainer",
-    badge: "Most Common",
+    badge: "Ongoing",
     description:
-      "Ongoing strategic partnership with structured support across key business areas.",
-    details: [
-      "30/60/90-day engagement cycles",
-      "Weekly strategy calls + async support",
-      "Deliverables: roadmaps, playbooks, system reviews",
-      "Access to operator network and resources",
-      "Best for: Teams with execution capacity seeking strategic guidance",
+      "Structured strategic partnership with regular touchpoints and hands-on support across key business areas.",
+    includes: [
+      "Weekly strategy calls (60-90 min)",
+      "Async support via Slack/email",
+      "Deliverables: roadmaps, playbooks, system designs",
+      "Access to our operator network",
     ],
+    cadence: "30/60/90-day cycles, renewable",
+    outcomes: "Systems that run without you, clear KPIs, execution momentum",
+    bestFor: "Teams with execution capacity seeking strategic leverage",
   },
   {
     title: "Sprint Project",
     badge: "Focused",
     description:
-      "Time-boxed engagement targeting a specific challenge or opportunity.",
-    details: [
-      "2–4 week fixed scope",
-      "Defined outcomes and deliverables",
+      "Time-boxed engagement targeting a specific challenge, launch, or operational gap.",
+    includes: [
+      "Defined scope and deliverables upfront",
       "Intensive collaboration period",
-      "Examples: GTM launch, ops audit, system design",
-      "Best for: Specific problems requiring concentrated expertise",
+      "Handoff documentation and playbooks",
+      "Examples: GTM launch, ops audit, funnel rebuild",
     ],
+    cadence: "2-4 weeks, fixed scope",
+    outcomes: "Specific problem solved, system built, or initiative launched",
+    bestFor: "Specific problems requiring concentrated expertise",
   },
   {
     title: "Strategic Partnership",
     badge: "Selective",
     description:
-      "Deep operational involvement with equity alignment for high-potential ventures.",
-    details: [
+      "Deep operational involvement with equity alignment for high-potential ventures where we take an active role.",
+    includes: [
       "Equity or hybrid (cash + equity) structure",
       "Active operator role alongside founders",
-      "Long-term commitment (12+ months typical)",
       "Full integration into leadership and execution",
-      "Best for: Ventures seeking a hands-on operating partner",
+      "Long-term commitment (12+ months typical)",
+    ],
+    cadence: "Ongoing, deeply embedded",
+    outcomes: "Scaled operations, sustainable growth systems, exit readiness",
+    bestFor: "Ventures seeking a hands-on operating partner, not just advice",
+  },
+];
+
+const capabilities = [
+  {
+    category: "Technology & Automation",
+    items: [
+      "AI-assisted workflows and agentic coding for speed",
+      "Internal tooling and dashboard development",
+      "Process automation (n8n, Zapier, custom scripts)",
+      "Real-time alerting and monitoring systems",
+    ],
+  },
+  {
+    category: "Growth & Distribution",
+    items: [
+      "Funnel architecture and conversion optimization",
+      "Partnership and affiliate program design",
+      "Content engines and SEO systems",
+      "Paid acquisition strategy and execution",
+    ],
+  },
+  {
+    category: "Operations & Systems",
+    items: [
+      "KPI frameworks and BI dashboards",
+      "Risk and compliance-aware operations",
+      "Rules-based system design (trading, gaming, etc.)",
+      "Process documentation and playbooks",
+    ],
+  },
+  {
+    category: "Team & Leadership",
+    items: [
+      "Hiring strategy and team structure",
+      "Compensation and incentive design",
+      "Accountability systems and cadences",
+      "Founder/operator coaching",
     ],
   },
 ];
 
-const toolsAndStrategies = [
-  "AI-assisted workflows",
-  "Agentic coding & automation",
-  "Dashboards & BI systems",
-  "Process automation (n8n, Zapier)",
-  "Systems design & architecture",
-  "Funnels & distribution strategy",
-  "Partnership development",
-  "KPI cadence & accountability",
-  "Team structure & hiring",
-  "Product & ops execution",
+const exclusions = [
+  "No free consulting or \"pick your brain\" calls",
+  "No passive investing without operational involvement",
+  "No engagements without decision-making access",
+  "No generic coaching, courses, or group programs",
+  "No high-volume, low-touch client work",
+  "No one-off advice calls or hourly billing",
+  "No work where we can't materially move outcomes",
 ];
 
 export default function HowWePartnerPage() {
@@ -111,7 +153,7 @@ export default function HowWePartnerPage() {
       <PageHeader
         eyebrow="Partnership Models"
         title="How We Partner"
-        description="We don't believe in one-size-fits-all engagements. Every partnership is structured around outcomes, incentives, and execution responsibility."
+        description="We work with trading platforms, prediction markets, digital subscription businesses, and regulated gaming operators. Every engagement is structured around outcomes, incentives, and execution — not just advice."
       />
 
       {/* How It Works */}
@@ -124,7 +166,7 @@ export default function HowWePartnerPage() {
             How It Works
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
-            From first contact to ongoing execution, here's what working with us looks like.
+            From first contact to ongoing execution. No long sales cycles — we move fast and expect the same from partners.
           </p>
         </div>
 
@@ -150,7 +192,7 @@ export default function HowWePartnerPage() {
 
       <Separator className="bg-border/40" />
 
-      {/* Engagement Packages */}
+      {/* Engagement Examples */}
       <section className="space-y-8">
         <div className="space-y-3">
           <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
@@ -160,7 +202,7 @@ export default function HowWePartnerPage() {
             Ways to Work Together
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
-            Each engagement is tailored to your stage, needs, and capacity. Here are the typical structures.
+            Each engagement is tailored to your stage, needs, and execution capacity. Here are the typical structures we offer.
           </p>
         </div>
 
@@ -170,7 +212,7 @@ export default function HowWePartnerPage() {
               key={pkg.title}
               className="flex flex-col border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]"
             >
-              <CardHeader>
+              <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-xl">{pkg.title}</CardTitle>
                   <Badge variant="secondary" className="text-[10px]">
@@ -181,17 +223,33 @@ export default function HowWePartnerPage() {
                   {pkg.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="mt-auto">
-                <ul className="space-y-2">
-                  {pkg.details.map((detail, i) => (
-                    <li
-                      key={i}
-                      className="text-sm text-muted-foreground/80 leading-relaxed"
-                    >
-                      • {detail}
-                    </li>
-                  ))}
-                </ul>
+              <CardContent className="space-y-4 flex-1">
+                <div>
+                  <p className="text-xs font-medium text-foreground/80 uppercase tracking-wide mb-2">
+                    Includes
+                  </p>
+                  <ul className="space-y-1.5">
+                    {pkg.includes.map((item, i) => (
+                      <li
+                        key={i}
+                        className="text-sm text-muted-foreground/80 leading-relaxed"
+                      >
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="pt-2 border-t border-border/30 space-y-2">
+                  <p className="text-xs text-muted-foreground/70">
+                    <span className="font-medium text-foreground/70">Cadence:</span> {pkg.cadence}
+                  </p>
+                  <p className="text-xs text-muted-foreground/70">
+                    <span className="font-medium text-foreground/70">Outcomes:</span> {pkg.outcomes}
+                  </p>
+                  <p className="text-xs text-muted-foreground/70">
+                    <span className="font-medium text-foreground/70">Best for:</span> {pkg.bestFor}
+                  </p>
+                </div>
               </CardContent>
             </Card>
           ))}
@@ -204,25 +262,38 @@ export default function HowWePartnerPage() {
       <section className="space-y-8">
         <div className="space-y-3">
           <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-            Our Toolkit
+            Operator Toolkit
           </p>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
             What We Bring
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
-            Depending on your needs, we deploy a combination of tools, strategies, and systems.
+            Depending on your needs, we deploy a combination of strategies, systems, and hands-on execution. We're operators first — we build, ship, and iterate alongside you.
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          {toolsAndStrategies.map((tool) => (
-            <Badge
-              key={tool}
-              variant="outline"
-              className="text-xs sm:text-sm py-1.5 px-3 border-border/60 text-muted-foreground/90"
+        <div className="grid gap-6 sm:grid-cols-2">
+          {capabilities.map((cap) => (
+            <Card
+              key={cap.category}
+              className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]"
             >
-              {tool}
-            </Badge>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">{cap.category}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-1.5">
+                  {cap.items.map((item, i) => (
+                    <li
+                      key={i}
+                      className="text-sm text-muted-foreground/80 leading-relaxed"
+                    >
+                      • {item}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
@@ -232,17 +303,20 @@ export default function HowWePartnerPage() {
       {/* What We Don't Do */}
       <section className="space-y-6">
         <div className="space-y-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Boundaries
+          </p>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
             What We Don't Do
           </h2>
+          <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
+            We're selective about engagements. This isn't a volume play — we work deeply with a small number of partners at a time.
+          </p>
         </div>
         <ul className="grid gap-2 sm:grid-cols-2 text-sm sm:text-base text-muted-foreground/80">
-          <li>• No generic coaching or courses</li>
-          <li>• No free consulting</li>
-          <li>• No passive investing</li>
-          <li>• No engagements without decision access</li>
-          <li>• No high-volume client work</li>
-          <li>• No one-off advice calls</li>
+          {exclusions.map((item, i) => (
+            <li key={i}>• {item}</li>
+          ))}
         </ul>
       </section>
 
@@ -251,17 +325,17 @@ export default function HowWePartnerPage() {
       {/* CTA */}
       <section className="text-center space-y-6 py-4">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
-          Ready to Explore a Partnership?
+          Ready to Work Together?
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground/80 max-w-lg mx-auto leading-[1.6]">
-          Start with an application. We'll review your situation and reach out if there's potential fit.
+          Start with an application. We review every submission and reach out if there's potential fit. No pitch decks, no lengthy forms — just the essentials.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/apply"
             className={buttonVariants({ size: "lg", className: "px-8" })}
           >
-            Apply Now
+            Apply to Work With Us
           </Link>
           <Link
             href="/apply/partnership"
@@ -271,7 +345,7 @@ export default function HowWePartnerPage() {
               className: "px-8",
             })}
           >
-            Explore Partnership
+            Strategic Partnership
           </Link>
         </div>
       </section>
