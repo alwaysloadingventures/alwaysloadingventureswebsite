@@ -1,17 +1,20 @@
 "use client"
 
 import * as React from "react"
-import { Group, Panel, Separator } from "react-resizable-panels"
+import { Group, Panel, Separator, type GroupProps } from "react-resizable-panels"
 
 import { cn } from "@/lib/utils"
 
 function ResizablePanelGroup({
   className,
+  orientation = "horizontal",
   ...props
-}: React.ComponentProps<typeof Group>) {
+}: GroupProps) {
   return (
     <Group
       data-slot="resizable-panel-group"
+      data-panel-group-direction={orientation}
+      orientation={orientation}
       className={cn(
         "flex h-full w-full data-[panel-group-direction=vertical]:flex-col",
         className

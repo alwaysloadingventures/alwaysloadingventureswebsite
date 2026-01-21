@@ -1,0 +1,46 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6056e0;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#4568a0;stop-opacity:0.15" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="#1a1625"/>
+  <rect x="30" y="30" width="540" height="340" rx="12" fill="url(#grad2)" stroke="#6056e0" stroke-opacity="0.3"/>
+  <!-- Automation flow mockup -->
+  <text x="50" y="70" font-family="system-ui" font-size="14" fill="#6056e0" fill-opacity="0.8">Automation Pipeline</text>
+  <!-- Flow nodes -->
+  <rect x="50" y="100" width="100" height="50" rx="8" fill="#2a2435" stroke="#6056e0" stroke-opacity="0.4"/>
+  <text x="75" y="130" font-family="system-ui" font-size="10" fill="#999">Trigger</text>
+  <line x1="150" y1="125" x2="190" y2="125" stroke="#6056e0" stroke-opacity="0.5" stroke-width="2"/>
+  <polygon points="185,120 195,125 185,130" fill="#6056e0" fill-opacity="0.5"/>
+
+  <rect x="200" y="100" width="100" height="50" rx="8" fill="#2a2435" stroke="#6056e0" stroke-opacity="0.4"/>
+  <text x="225" y="130" font-family="system-ui" font-size="10" fill="#999">Process</text>
+  <line x1="300" y1="125" x2="340" y2="125" stroke="#6056e0" stroke-opacity="0.5" stroke-width="2"/>
+  <polygon points="335,120 345,125 335,130" fill="#6056e0" fill-opacity="0.5"/>
+
+  <rect x="350" y="100" width="100" height="50" rx="8" fill="#2a2435" stroke="#6056e0" stroke-opacity="0.4"/>
+  <text x="380" y="130" font-family="system-ui" font-size="10" fill="#999">Action</text>
+  <line x1="450" y1="125" x2="490" y2="125" stroke="#6056e0" stroke-opacity="0.5" stroke-width="2"/>
+  <polygon points="485,120 495,125 485,130" fill="#6056e0" fill-opacity="0.5"/>
+
+  <rect x="500" y="100" width="60" height="50" rx="8" fill="#6056e0" fill-opacity="0.3" stroke="#6056e0" stroke-opacity="0.6"/>
+  <text x="515" y="130" font-family="system-ui" font-size="10" fill="#fff">Done</text>
+
+  <!-- Metrics section -->
+  <rect x="50" y="180" width="240" height="160" rx="8" fill="#2a2435" stroke="#6056e0" stroke-opacity="0.2"/>
+  <text x="70" y="210" font-family="system-ui" font-size="12" fill="#6056e0" fill-opacity="0.7">Execution Stats</text>
+  <text x="70" y="240" font-family="system-ui" font-size="24" fill="#fff">2,847</text>
+  <text x="70" y="260" font-family="system-ui" font-size="10" fill="#666">tasks completed</text>
+  <text x="70" y="295" font-family="system-ui" font-size="20" fill="#fff">99.2%</text>
+  <text x="70" y="315" font-family="system-ui" font-size="10" fill="#666">success rate</text>
+
+  <!-- Activity log -->
+  <rect x="310" y="180" width="240" height="160" rx="8" fill="#2a2435" stroke="#6056e0" stroke-opacity="0.2"/>
+  <text x="330" y="210" font-family="system-ui" font-size="12" fill="#6056e0" fill-opacity="0.7">Recent Activity</text>
+  <rect x="330" y="225" width="200" height="24" rx="4" fill="#6056e0" fill-opacity="0.1"/>
+  <rect x="330" y="255" width="200" height="24" rx="4" fill="#6056e0" fill-opacity="0.08"/>
+  <rect x="330" y="285" width="200" height="24" rx="4" fill="#6056e0" fill-opacity="0.06"/>
+  <rect x="330" y="315" width="200" height="24" rx="4" fill="#6056e0" fill-opacity="0.04"/>
+</svg>

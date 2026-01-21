@@ -1,0 +1,30 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6056e0;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#2573a0;stop-opacity:0.2" />
+    </linearGradient>
+    <linearGradient id="line1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6056e0;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#6056e0;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="#1a1625"/>
+  <rect x="30" y="30" width="540" height="340" rx="12" fill="url(#grad1)" stroke="#6056e0" stroke-opacity="0.3"/>
+  <!-- Dashboard mockup -->
+  <rect x="50" y="60" width="200" height="24" rx="4" fill="#6056e0" fill-opacity="0.4"/>
+  <rect x="50" y="100" width="500" height="1" fill="url(#line1)"/>
+  <!-- Metric cards -->
+  <rect x="50" y="120" width="150" height="80" rx="8" fill="#2a2435" stroke="#6056e0" stroke-opacity="0.2"/>
+  <rect x="220" y="120" width="150" height="80" rx="8" fill="#2a2435" stroke="#6056e0" stroke-opacity="0.2"/>
+  <rect x="390" y="120" width="150" height="80" rx="8" fill="#2a2435" stroke="#6056e0" stroke-opacity="0.2"/>
+  <!-- Chart area -->
+  <rect x="50" y="220" width="330" height="130" rx="8" fill="#2a2435" stroke="#6056e0" stroke-opacity="0.2"/>
+  <polyline points="70,320 120,280 170,300 220,260 270,270 320,240 360,250" fill="none" stroke="#6056e0" stroke-width="2"/>
+  <!-- Side panel -->
+  <rect x="400" y="220" width="140" height="130" rx="8" fill="#2a2435" stroke="#6056e0" stroke-opacity="0.2"/>
+  <rect x="415" y="240" width="110" height="12" rx="2" fill="#6056e0" fill-opacity="0.3"/>
+  <rect x="415" y="260" width="80" height="10" rx="2" fill="#6056e0" fill-opacity="0.2"/>
+  <rect x="415" y="280" width="90" height="10" rx="2" fill="#6056e0" fill-opacity="0.2"/>
+  <rect x="415" y="300" width="70" height="10" rx="2" fill="#6056e0" fill-opacity="0.2"/>
+</svg>
