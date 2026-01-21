@@ -19,6 +19,8 @@ import {
   Rocket,
   UserPlus,
 } from "lucide-react";
+import { getLatestPosts } from "@/lib/blog";
+import { BlogCard } from "@/components/blog-card";
 
 const provenOutcomes = [
   { label: "Company A", industry: "Fintech", result: "$0 → $250M", timeframe: "4 years" },
@@ -271,6 +273,40 @@ export default function HomePage() {
               </Card>
             );
           })}
+        </div>
+      </section>
+
+      {/* Thoughts & Experiments - Latest Blog Posts */}
+      <section className="space-y-6">
+        <div className="space-y-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            From the Blog
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
+            Thoughts & Experiments
+          </h2>
+          <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
+            Tactical insights on growth, operations, product, and building scalable businesses.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {getLatestPosts(3).map((post, index) => (
+            <BlogCard key={post.slug} post={post} featured={index === 0} />
+          ))}
+        </div>
+
+        <div className="flex justify-center pt-2">
+          <Link
+            href="/blog"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "px-8",
+            })}
+          >
+            View All Posts
+          </Link>
         </div>
       </section>
 

@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getAllPostSlugs, getPostBySlug } from "@/lib/blog";
+import { getAllPostSlugs, getPostBySlug, getAdjacentPosts } from "@/lib/blog";
 import { buttonVariants } from "@/lib/button-variants";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowLeft } from "lucide-react";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -23,6 +24,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const { prev, next } = getAdjacentPosts(slug);
+
   return (
     <article className="space-y-8">
       {/* Back link */}
@@ -40,7 +43,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Header */}
       <header className="space-y-4">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3 flex-wrap">
           <p className="text-sm text-muted-foreground/70">
             {new Date(post.date).toLocaleDateString("en-US", {
               year: "numeric",
@@ -50,6 +53,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </p>
           <span className="text-muted-foreground/50">•</span>
           <p className="text-sm text-muted-foreground/70">{post.author}</p>
+          <span className="text-muted-foreground/50">•</span>
+          <span className="flex items-center gap-1 text-sm text-muted-foreground/70">
+            <Clock className="h-3.5 w-3.5" />
+            {post.readTime} min read
+          </span>
         </div>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
           {post.title}
@@ -70,22 +78,64 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <Separator className="bg-border/40" />
 
-      {/* Content */}
+      {/* Content with Typography/Prose styling */}
       <div
         className="prose prose-invert prose-lg max-w-none
-          prose-headings:font-semibold prose-headings:tracking-tight
-          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+          prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-foreground
+          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-border/30
           prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-          prose-p:text-muted-foreground/80 prose-p:leading-[1.7]
-          prose-li:text-muted-foreground/80 prose-li:leading-[1.7]
+          prose-h4:text-lg prose-h4:mt-6 prose-h4:mb-2
+          prose-p:text-muted-foreground/85 prose-p:leading-[1.8]
+          prose-li:text-muted-foreground/85 prose-li:leading-[1.7] prose-li:my-1
+          prose-ul:my-4 prose-ol:my-4
           prose-strong:text-foreground prose-strong:font-semibold
           prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-          prose-code:text-primary prose-code:bg-muted/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-          prose-pre:bg-card prose-pre:border prose-pre:border-border/30
-          prose-blockquote:border-l-primary prose-blockquote:text-muted-foreground/70
-          prose-hr:border-border/40"
+          prose-code:text-primary prose-code:bg-muted/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
+          prose-pre:bg-card prose-pre:border prose-pre:border-border/30 prose-pre:rounded-lg
+          prose-blockquote:border-l-primary prose-blockquote:border-l-2 prose-blockquote:text-muted-foreground/70 prose-blockquote:italic prose-blockquote:pl-4
+          prose-hr:border-border/40 prose-hr:my-8"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
+
+      <Separator className="bg-border/40" />
+
+      {/* Next/Previous Navigation */}
+      {(prev || next) && (
+        <nav className="grid gap-4 sm:grid-cols-2">
+          {prev ? (
+            <Link href={`/blog/${prev.slug}`} className="group">
+              <Card className="h-full border-border/30 bg-card/50 hover:border-primary/30 transition-colors">
+                <CardHeader>
+                  <p className="text-xs text-muted-foreground/60 flex items-center gap-1">
+                    <ArrowLeft className="h-3 w-3" />
+                    Previous
+                  </p>
+                  <CardTitle className="text-base group-hover:text-primary transition-colors line-clamp-2">
+                    {prev.title}
+                  </CardTitle>
+                </CardHeader>
+              </Card>
+            </Link>
+          ) : (
+            <div />
+          )}
+          {next && (
+            <Link href={`/blog/${next.slug}`} className="group">
+              <Card className="h-full border-border/30 bg-card/50 hover:border-primary/30 transition-colors text-right">
+                <CardHeader>
+                  <p className="text-xs text-muted-foreground/60 flex items-center gap-1 justify-end">
+                    Next
+                    <ArrowRight className="h-3 w-3" />
+                  </p>
+                  <CardTitle className="text-base group-hover:text-primary transition-colors line-clamp-2">
+                    {next.title}
+                  </CardTitle>
+                </CardHeader>
+              </Card>
+            </Link>
+          )}
+        </nav>
+      )}
 
       <Separator className="bg-border/40" />
 
