@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Venture Studio",
+  description:
+    "We build and scale businesses alongside founders — not from the sidelines. Hands-on, operator-led collaboration with shared responsibility for outcomes.",
+  openGraph: {
+    title: "Venture Studio | AlwaysLoading Ventures",
+    description:
+      "Hands-on, operator-led collaboration with shared responsibility for outcomes.",
+  },
+};
 import { buttonVariants } from "@/lib/button-variants";
-import { PageHeader } from "@/components/layout-primitives";
 import {
   Card,
   CardHeader,
@@ -10,6 +21,30 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { ResizableShowcase } from "@/components/marketing/resizable-showcase";
+import {
+  VentureBlueprintViz,
+  DistributionEngineViz,
+  ScaleInfrastructureViz,
+} from "@/components/illustrations/venture-studio";
+
+const showcaseItems = [
+  {
+    title: "Venture Blueprint",
+    caption: "Structured foundations across product, operations, and distribution before scaling begins.",
+    component: <VentureBlueprintViz />,
+  },
+  {
+    title: "Distribution Engine",
+    caption: "Growth systems designed to compound — not spike and decay.",
+    component: <DistributionEngineViz />,
+  },
+  {
+    title: "Scale Infrastructure",
+    caption: "Systems that support growth without breaking compliance, performance, or trust.",
+    component: <ScaleInfrastructureViz />,
+  },
+];
 
 const buildingTogetherPrinciples = [
   {
@@ -120,22 +155,53 @@ const alignmentPrinciples = [
 
 export default function VentureStudioPage() {
   return (
-    <div className="space-y-16">
-      <PageHeader
-        eyebrow="Build With Us"
-        title="Venture Studio"
-        description="We build and scale businesses alongside founders — not from the sidelines. This is hands-on, operator-led collaboration for ventures in trading tech, prediction markets, digital products, and regulated platforms."
+    <div className="space-y-16 sm:space-y-24">
+      <ResizableShowcase
+        title="Build With Us"
+        subtitle="Co-building ventures with operators in the room."
+        chips={["Blueprint", "Distribution", "Scale"]}
+        items={showcaseItems}
+        left={
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+                Build With Us
+              </p>
+              <Badge variant="secondary" className="text-[11px]">Venture Studio</Badge>
+            </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+              Venture Studio
+            </h1>
+            <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+              We build and scale businesses alongside founders — not from the sidelines. This is hands-on, operator-led collaboration.
+            </p>
+            <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+              We work with a very small number of ventures at a time — typically 1-2 active projects — because this model requires real commitment. When we say yes, we're all in.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-4">
+              <Link
+                href="/apply/partnership"
+                className={buttonVariants({
+                  size: "lg",
+                  className: "w-full sm:w-auto px-8",
+                })}
+              >
+                Apply for Partnership
+              </Link>
+              <Link
+                href="/how-we-partner"
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "lg",
+                  className: "w-full sm:w-auto px-8",
+                })}
+              >
+                How We Partner
+              </Link>
+            </div>
+          </div>
+        }
       />
-
-      {/* Intro Context */}
-      <section className="space-y-4 max-w-3xl">
-        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
-          The Venture Studio is where we invest our time, expertise, and capacity into building something meaningful together. It's not advisory. It's not passive capital. It's shared execution — rolling up our sleeves and doing the work alongside you.
-        </p>
-        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
-          We work with a very small number of ventures at a time — typically 1-2 active projects — because this model requires real commitment from both sides. When we say yes, we're all in.
-        </p>
-      </section>
 
       <Separator className="bg-border/40" />
 
@@ -337,7 +403,7 @@ export default function VentureStudioPage() {
       <Separator className="bg-border/40" />
 
       {/* CTA */}
-      <section className="text-center space-y-6 py-4">
+      <section className="text-center space-y-6 py-4 sm:py-8">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
           Interested in Building Together?
         </h2>

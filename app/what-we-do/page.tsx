@@ -1,5 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader } from "@/components/layout-primitives";
+
+export const metadata: Metadata = {
+  title: "What We Do",
+  description:
+    "Operator-led execution across growth strategy, operations, product development, and systems. We drive measurable outcomes — not just advice.",
+  openGraph: {
+    title: "What We Do | AlwaysLoading Ventures",
+    description:
+      "Operator-led execution across growth strategy, operations, product development, and systems.",
+  },
+};
 import { buttonVariants } from "@/lib/button-variants";
 import {
   Card,
@@ -10,6 +21,30 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { ResizableShowcase } from "@/components/marketing/resizable-showcase";
+import {
+  OperatorDashboardViz,
+  AutomationWorkflowViz,
+  DistributionFunnelViz,
+} from "@/components/illustrations/what-we-do";
+
+const showcaseItems = [
+  {
+    title: "Operator Dashboard",
+    caption: "A unified view of revenue, risk, growth, and execution — designed for fast decisions, not vanity metrics.",
+    component: <OperatorDashboardViz />,
+  },
+  {
+    title: "Automation & AI Workflows",
+    caption: "Internal systems that reduce manual work, surface insights faster, and let teams operate at scale.",
+    component: <AutomationWorkflowViz />,
+  },
+  {
+    title: "Distribution & Monetization",
+    caption: "Distribution channels, pricing logic, and monetization systems engineered for sustainability.",
+    component: <DistributionFunnelViz />,
+  },
+];
 
 const advisoryIncludes = [
   "Diagnosing growth bottlenecks and revenue leaks",
@@ -94,22 +129,53 @@ const notForYouIf = [
 
 export default function WhatWeDoPage() {
   return (
-    <div className="space-y-16">
-      <PageHeader
-        eyebrow="Our Focus"
-        title="What We Do"
-        description="We operate at the intersection of strategy, execution, and ownership. Our work is built for systems-driven, monetized platforms — trading tech, prediction markets, digital subscriptions, and regulated gaming operators. Not idea-stage projects."
+    <div className="space-y-16 sm:space-y-24">
+      <ResizableShowcase
+        title="Execution Systems"
+        subtitle="Operator-grade systems for scaling monetized platforms."
+        chips={["Dashboards", "Automation", "Distribution"]}
+        items={showcaseItems}
+        left={
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+                Our Focus
+              </p>
+              <Badge variant="secondary" className="text-[11px]">What We Do</Badge>
+            </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+              What We Do
+            </h1>
+            <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+              We operate at the intersection of strategy, execution, and ownership. Our work is built for systems-driven, monetized platforms — trading tech, prediction markets, digital subscriptions, and regulated gaming operators.
+            </p>
+            <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+              We've scaled revenue from zero to significant ARR across multiple ventures. We don't just advise — we build, ship, and iterate alongside the teams we work with.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-4">
+              <Link
+                href="/apply/advisory"
+                className={buttonVariants({
+                  size: "lg",
+                  className: "w-full sm:w-auto px-8",
+                })}
+              >
+                Apply for Advisory
+              </Link>
+              <Link
+                href="/apply/partnership"
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "lg",
+                  className: "w-full sm:w-auto px-8",
+                })}
+              >
+                Explore Partnerships
+              </Link>
+            </div>
+          </div>
+        }
       />
-
-      {/* Intro Context */}
-      <section className="space-y-4 max-w-3xl">
-        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
-          We've scaled revenue from zero to significant ARR across multiple ventures. We've built the internal systems, dashboards, and automation that let small teams punch above their weight. We understand the operational realities of high-volume platforms, constrained environments, and businesses where execution quality is the difference between success and failure.
-        </p>
-        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
-          We don't just advise — we build, ship, and iterate alongside the teams we work with.
-        </p>
-      </section>
 
       <Separator className="bg-border/40" />
 
@@ -322,7 +388,7 @@ export default function WhatWeDoPage() {
       <Separator className="bg-border/40" />
 
       {/* CTA Section */}
-      <section className="text-center space-y-6 py-4">
+      <section className="text-center space-y-6 py-4 sm:py-8">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
           Ready to Work Together?
         </h2>

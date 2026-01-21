@@ -1,0 +1,74 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="app3-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0f2e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#app3-bg)"/>
+
+  <text x="300" y="36" font-family="ui-monospace, monospace" font-size="11" fill="#a855f7" text-anchor="middle" font-weight="500">ONBOARDING & EXECUTION</text>
+
+  <!-- Timeline -->
+  <rect x="35" y="56" width="530" height="70" rx="10" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.2"/>
+  <text x="55" y="78" font-family="system-ui" font-size="10" fill="#71717a">Onboarding Timeline</text>
+
+  <rect x="55" y="95" width="490" height="6" rx="3" fill="#12081f"/>
+  <rect x="55" y="95" width="370" height="6" rx="3" fill="#a855f7" fill-opacity="0.4"/>
+
+  <circle cx="55" cy="98" r="6" fill="#22c55e"/>
+  <circle cx="175" cy="98" r="6" fill="#22c55e"/>
+  <circle cx="295" cy="98" r="6" fill="#a855f7"/>
+  <circle cx="415" cy="98" r="6" fill="#12081f" stroke="#a855f7" stroke-opacity="0.3"/>
+  <circle cx="535" cy="98" r="6" fill="#12081f" stroke="#a855f7" stroke-opacity="0.2"/>
+
+  <text x="45" y="118" font-family="system-ui" font-size="7" fill="#22c55e">Day 1</text>
+  <text x="160" y="118" font-family="system-ui" font-size="7" fill="#22c55e">Week 1</text>
+  <text x="280" y="118" font-family="system-ui" font-size="7" fill="#a855f7">Week 2</text>
+  <text x="400" y="118" font-family="system-ui" font-size="7" fill="#71717a">Week 3</text>
+  <text x="520" y="118" font-family="system-ui" font-size="7" fill="#52525b">Week 4</text>
+
+  <!-- Three status columns -->
+  <rect x="35" y="140" width="170" height="180" rx="10" fill="#1a0f2e" stroke="#22c55e" stroke-opacity="0.3"/>
+  <rect x="35" y="140" width="170" height="32" rx="10" fill="#22c55e" fill-opacity="0.1"/>
+  <text x="80" y="162" font-family="system-ui" font-size="10" fill="#22c55e">Complete</text>
+
+  <text x="50" y="190" font-family="system-ui" font-size="8" fill="#d4d4d8">Access & tooling setup</text>
+  <text x="50" y="210" font-family="system-ui" font-size="8" fill="#d4d4d8">Async channel created</text>
+  <text x="50" y="230" font-family="system-ui" font-size="8" fill="#d4d4d8">Kickoff call done</text>
+  <text x="50" y="250" font-family="system-ui" font-size="8" fill="#d4d4d8">First priorities set</text>
+
+  <rect x="50" y="270" width="140" height="36" rx="6" fill="#22c55e" fill-opacity="0.15"/>
+  <text x="95" y="293" font-family="system-ui" font-size="9" fill="#22c55e" text-anchor="middle">4/4 Done</text>
+
+  <rect x="215" y="140" width="170" height="180" rx="10" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.4"/>
+  <rect x="215" y="140" width="170" height="32" rx="10" fill="#a855f7" fill-opacity="0.15"/>
+  <text x="255" y="162" font-family="system-ui" font-size="10" fill="#a855f7">In Progress</text>
+
+  <text x="230" y="190" font-family="system-ui" font-size="8" fill="#d4d4d8">Operating cadence set</text>
+  <text x="230" y="210" font-family="system-ui" font-size="8" fill="#d4d4d8">Baseline metrics captured</text>
+  <text x="230" y="230" font-family="system-ui" font-size="8" fill="#71717a">90-day plan draft</text>
+  <text x="230" y="250" font-family="system-ui" font-size="8" fill="#52525b">First quick win shipped</text>
+
+  <rect x="230" y="270" width="140" height="36" rx="6" fill="#a855f7" fill-opacity="0.15"/>
+  <text x="275" y="293" font-family="system-ui" font-size="9" fill="#a855f7" text-anchor="middle">2/4 Done</text>
+
+  <rect x="395" y="140" width="170" height="180" rx="10" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.15"/>
+  <rect x="395" y="140" width="170" height="32" rx="10" fill="#a855f7" fill-opacity="0.05"/>
+  <text x="445" y="162" font-family="system-ui" font-size="10" fill="#71717a">Upcoming</text>
+
+  <text x="410" y="190" font-family="system-ui" font-size="8" fill="#52525b">Full execution mode</text>
+  <text x="410" y="210" font-family="system-ui" font-size="8" fill="#52525b">Weekly rhythm locked</text>
+  <text x="410" y="230" font-family="system-ui" font-size="8" fill="#52525b">First review checkpoint</text>
+  <text x="410" y="250" font-family="system-ui" font-size="8" fill="#52525b">Momentum established</text>
+
+  <rect x="410" y="270" width="140" height="36" rx="6" fill="#a855f7" fill-opacity="0.05"/>
+  <text x="455" y="293" font-family="system-ui" font-size="9" fill="#52525b" text-anchor="middle">0/4 Done</text>
+
+  <!-- Bottom progress -->
+  <rect x="35" y="335" width="530" height="35" rx="8" fill="#a855f7" fill-opacity="0.08"/>
+  <text x="55" y="357" font-family="system-ui" font-size="9" fill="#71717a">Overall Onboarding:</text>
+  <rect x="175" y="348" width="200" height="8" rx="4" fill="#12081f"/>
+  <rect x="175" y="348" width="120" height="8" rx="4" fill="#a855f7" fill-opacity="0.5"/>
+  <text x="395" y="357" font-family="ui-monospace, monospace" font-size="10" fill="#a855f7">60%</text>
+</svg>

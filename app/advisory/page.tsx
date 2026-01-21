@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Advisory",
+  description:
+    "Operator-grade advisory for founders and leadership teams who want execution clarity, systems, and measurable progress — not theory.",
+  openGraph: {
+    title: "Advisory | AlwaysLoading Ventures",
+    description:
+      "Hands-on advisory built around execution, systems, and measurable progress.",
+  },
+};
 import { buttonVariants } from "@/lib/button-variants";
-import { PageHeader } from "@/components/layout-primitives";
 import {
   Card,
   CardHeader,
@@ -10,6 +21,30 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { ResizableShowcase } from "@/components/marketing/resizable-showcase";
+import {
+  WeeklyOperatorSyncViz,
+  ExecutionBacklogViz,
+  MetricsFeedbackLoopsViz,
+} from "@/components/illustrations/advisory";
+
+const showcaseItems = [
+  {
+    title: "Weekly Operator Sync",
+    caption: "Structured sessions focused on decisions, blockers, and execution — not theory.",
+    component: <WeeklyOperatorSyncViz />,
+  },
+  {
+    title: "Execution Backlog",
+    caption: "A prioritized operating backlog that translates ideas into shipped outcomes.",
+    component: <ExecutionBacklogViz />,
+  },
+  {
+    title: "Metrics & Feedback Loops",
+    caption: "Fast feedback cycles that turn data into better decisions and tighter systems.",
+    component: <MetricsFeedbackLoopsViz />,
+  },
+];
 
 const advisoryCadence = [
   {
@@ -107,22 +142,53 @@ const successOutcomes = [
 
 export default function AdvisoryPage() {
   return (
-    <div className="space-y-16">
-      <PageHeader
-        eyebrow="Work With Us"
-        title="Advisory"
-        description="Operator-grade advisory for founders and leadership teams who want execution clarity, systems, and measurable progress — not theory or frameworks that sit in a deck."
+    <div className="space-y-16 sm:space-y-24">
+      <ResizableShowcase
+        title="Operator Support"
+        subtitle="Hands-on advisory built around execution."
+        chips={["Cadence", "Backlog", "Feedback loops"]}
+        items={showcaseItems}
+        left={
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+                Work With Us
+              </p>
+              <Badge variant="secondary" className="text-[11px]">Advisory</Badge>
+            </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+              Advisory
+            </h1>
+            <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+              Operator-grade advisory for founders and leadership teams who want execution clarity, systems, and measurable progress.
+            </p>
+            <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+              We work alongside you — diagnosing bottlenecks, installing systems, and driving outcomes. Not theory or frameworks that sit in a deck.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-4">
+              <Link
+                href="/apply/advisory"
+                className={buttonVariants({
+                  size: "lg",
+                  className: "w-full sm:w-auto px-8",
+                })}
+              >
+                Apply for Advisory
+              </Link>
+              <Link
+                href="/how-we-partner"
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "lg",
+                  className: "w-full sm:w-auto px-8",
+                })}
+              >
+                How We Partner
+              </Link>
+            </div>
+          </div>
+        }
       />
-
-      {/* Intro Context */}
-      <section className="space-y-4 max-w-3xl">
-        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
-          This is hands-on advisory for operators who are ready to implement. We work alongside you — diagnosing bottlenecks, installing systems, and driving measurable outcomes across growth, operations, and product.
-        </p>
-        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
-          We've scaled trading platforms, prediction markets, digital subscription businesses, and regulated gaming operators. We bring that experience to every engagement — not generic playbooks, but systems that work in complex, constrained environments.
-        </p>
-      </section>
 
       <Separator className="bg-border/40" />
 
@@ -370,7 +436,7 @@ export default function AdvisoryPage() {
       <Separator className="bg-border/40" />
 
       {/* CTA */}
-      <section className="text-center space-y-6 py-4">
+      <section className="text-center space-y-6 py-4 sm:py-8">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
           Ready to Work Together?
         </h2>

@@ -1,29 +1,33 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import {
+  SystemsDashboardViz,
+  AutomationPipelineViz,
+  DistributionAnalyticsViz,
+} from "@/components/illustrations/home";
 
-// Easy-to-edit array for hero media - swap real images later
+// Hero media with React component illustrations
 const heroMedia = [
   {
     id: "systems",
     title: "Systems",
     caption: "Dashboard & metrics",
-    src: "/hero/hero-1.svg",
+    component: <SystemsDashboardViz />,
   },
   {
     id: "automation",
     title: "Automation",
     caption: "Pipeline execution",
-    src: "/hero/hero-2.svg",
+    component: <AutomationPipelineViz />,
   },
   {
     id: "distribution",
     title: "Distribution",
     caption: "Channel analytics",
-    src: "/hero/hero-3.svg",
+    component: <DistributionAnalyticsViz />,
   },
 ];
 
@@ -47,8 +51,8 @@ export function HeroMediaPanel() {
       </CardHeader>
 
       <CardContent className="space-y-3 pb-4">
-        {/* Image display area */}
-        <div className="relative aspect-[3/2] rounded-lg overflow-hidden border border-border/20 bg-background/50">
+        {/* Illustration display area */}
+        <div className="relative aspect-[16/9] rounded-lg overflow-hidden border border-border/20 bg-background/50">
           {heroMedia.map((item, index) => (
             <div
               key={item.id}
@@ -57,13 +61,7 @@ export function HeroMediaPanel() {
                 index === activeIndex ? "opacity-100" : "opacity-0"
               )}
             >
-              <Image
-                src={item.src}
-                alt={`${item.title} - ${item.caption}`}
-                fill
-                className="object-cover"
-                priority={index === 0}
-              />
+              <div className="w-full h-full">{item.component}</div>
             </div>
           ))}
         </div>

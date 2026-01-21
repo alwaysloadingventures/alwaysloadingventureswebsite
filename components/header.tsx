@@ -42,7 +42,7 @@ export function Header() {
             alt="AlwaysLoading Ventures"
             width={280}
             height={56}
-            className="h-[42px] sm:h-[52px] w-auto"
+            className="h-[44px] sm:h-[56px] w-auto"
             priority
           />
         </Link>

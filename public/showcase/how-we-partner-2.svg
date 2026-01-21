@@ -1,0 +1,99 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hwp2-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0f2e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow-hwp2">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="600" height="400" fill="url(#hwp2-bg)"/>
+
+  <!-- Title -->
+  <text x="300" y="36" font-family="ui-monospace, monospace" font-size="11" fill="#a855f7" text-anchor="middle" font-weight="500">90-DAY EXECUTION TIMELINE</text>
+
+  <!-- Timeline track -->
+  <rect x="50" y="70" width="500" height="10" rx="5" fill="#1a0f2e"/>
+  <rect x="50" y="70" width="380" height="10" rx="5" fill="#a855f7" fill-opacity="0.3"/>
+  <rect x="50" y="70" width="200" height="10" rx="5" fill="#a855f7" fill-opacity="0.5"/>
+
+  <!-- Timeline markers -->
+  <circle cx="50" cy="75" r="8" fill="#22c55e" filter="url(#glow-hwp2)"/>
+  <circle cx="217" cy="75" r="8" fill="#a855f7" filter="url(#glow-hwp2)"/>
+  <circle cx="383" cy="75" r="8" fill="#a855f7" fill-opacity="0.5"/>
+  <circle cx="550" cy="75" r="8" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.3" stroke-width="2"/>
+
+  <!-- Timeline labels -->
+  <text x="50" y="100" font-family="system-ui" font-size="9" fill="#22c55e" text-anchor="middle">Start</text>
+  <text x="217" y="100" font-family="system-ui" font-size="9" fill="#a855f7" text-anchor="middle">Day 30</text>
+  <text x="383" y="100" font-family="system-ui" font-size="9" fill="#71717a" text-anchor="middle">Day 60</text>
+  <text x="550" y="100" font-family="system-ui" font-size="9" fill="#52525b" text-anchor="middle">Day 90</text>
+
+  <!-- Current position indicator -->
+  <line x1="200" y1="55" x2="200" y2="85" stroke="#ffffff" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="200" y="50" font-family="system-ui" font-size="7" fill="#ffffff" text-anchor="middle">Today</text>
+
+  <!-- Sprint cards -->
+  <!-- Sprint 1 - Complete -->
+  <rect x="40" y="120" width="160" height="140" rx="10" fill="#1a0f2e" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1.5"/>
+  <rect x="40" y="120" width="160" height="32" rx="10" fill="#22c55e" fill-opacity="0.1"/>
+  <text x="56" y="142" font-family="system-ui" font-size="10" fill="#22c55e" font-weight="500">Sprint 1: Foundation</text>
+  <circle cx="180" cy="136" r="8" fill="#22c55e" fill-opacity="0.2"/>
+  <text x="180" y="140" font-family="system-ui" font-size="8" fill="#22c55e" text-anchor="middle">✓</text>
+
+  <text x="56" y="172" font-family="system-ui" font-size="8" fill="#d4d4d8">• Baseline audit</text>
+  <text x="56" y="188" font-family="system-ui" font-size="8" fill="#d4d4d8">• KPI setup</text>
+  <text x="56" y="204" font-family="system-ui" font-size="8" fill="#d4d4d8">• Quick wins shipped</text>
+  <text x="56" y="220" font-family="system-ui" font-size="8" fill="#d4d4d8">• Process documented</text>
+
+  <rect x="56" y="238" width="128" height="6" rx="2" fill="#22c55e" fill-opacity="0.3"/>
+  <text x="144" y="252" font-family="system-ui" font-size="7" fill="#22c55e" text-anchor="middle">Complete</text>
+
+  <!-- Sprint 2 - In Progress -->
+  <rect x="220" y="120" width="160" height="140" rx="10" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.5" stroke-width="1.5"/>
+  <rect x="220" y="120" width="160" height="32" rx="10" fill="#a855f7" fill-opacity="0.15"/>
+  <text x="236" y="142" font-family="system-ui" font-size="10" fill="#a855f7" font-weight="500">Sprint 2: Build</text>
+  <rect x="340" y="130" width="28" height="12" rx="4" fill="#a855f7" fill-opacity="0.2"/>
+  <text x="354" y="139" font-family="system-ui" font-size="7" fill="#a855f7" text-anchor="middle">65%</text>
+
+  <text x="236" y="172" font-family="system-ui" font-size="8" fill="#d4d4d8">• Core features</text>
+  <text x="236" y="188" font-family="system-ui" font-size="8" fill="#d4d4d8">• Process automation</text>
+  <text x="236" y="204" font-family="system-ui" font-size="8" fill="#71717a">• Team training</text>
+  <text x="236" y="220" font-family="system-ui" font-size="8" fill="#71717a">• Integration testing</text>
+
+  <rect x="236" y="238" width="128" height="6" rx="2" fill="#1a0f2e"/>
+  <rect x="236" y="238" width="83" height="6" rx="2" fill="#a855f7" fill-opacity="0.5"/>
+
+  <!-- Sprint 3 - Planned -->
+  <rect x="400" y="120" width="160" height="140" rx="10" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.15"/>
+  <rect x="400" y="120" width="160" height="32" rx="10" fill="#a855f7" fill-opacity="0.05"/>
+  <text x="416" y="142" font-family="system-ui" font-size="10" fill="#71717a" font-weight="500">Sprint 3: Scale</text>
+
+  <text x="416" y="172" font-family="system-ui" font-size="8" fill="#52525b">• Distribution launch</text>
+  <text x="416" y="188" font-family="system-ui" font-size="8" fill="#52525b">• Growth experiments</text>
+  <text x="416" y="204" font-family="system-ui" font-size="8" fill="#52525b">• Iterate & optimize</text>
+  <text x="416" y="220" font-family="system-ui" font-size="8" fill="#52525b">• Handoff prep</text>
+
+  <rect x="416" y="238" width="128" height="6" rx="2" fill="#a855f7" fill-opacity="0.08"/>
+  <text x="480" y="252" font-family="system-ui" font-size="7" fill="#52525b" text-anchor="middle">Planned</text>
+
+  <!-- Stats row -->
+  <rect x="40" y="285" width="175" height="85" rx="8" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.1"/>
+  <text x="56" y="310" font-family="system-ui" font-size="9" fill="#71717a">Tasks Completed</text>
+  <text x="56" y="340" font-family="ui-monospace, monospace" font-size="24" fill="#ffffff" font-weight="600">42</text>
+  <text x="100" y="340" font-family="system-ui" font-size="12" fill="#71717a">/ 58</text>
+  <rect x="56" y="352" width="143" height="4" rx="2" fill="#1a0f2e"/>
+  <rect x="56" y="352" width="103" height="4" rx="2" fill="#a855f7" fill-opacity="0.5"/>
+
+  <rect x="232" y="285" width="175" height="85" rx="8" fill="#1a0f2e" stroke="#22c55e" stroke-opacity="0.2"/>
+  <text x="248" y="310" font-family="system-ui" font-size="9" fill="#71717a">Status</text>
+  <text x="248" y="345" font-family="ui-monospace, monospace" font-size="20" fill="#22c55e" font-weight="600">On Track</text>
+  <circle cx="375" cy="335" r="6" fill="#22c55e" fill-opacity="0.3"/>
+
+  <rect x="424" y="285" width="136" height="85" rx="8" fill="#1a0f2e" stroke="#eab308" stroke-opacity="0.2"/>
+  <text x="440" y="310" font-family="system-ui" font-size="9" fill="#71717a">Blockers</text>
+  <text x="440" y="345" font-family="ui-monospace, monospace" font-size="24" fill="#eab308" font-weight="600">2</text>
+  <text x="472" y="345" font-family="system-ui" font-size="10" fill="#71717a">active</text>
+</svg>

@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout-primitives";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Operator-grade thinking on systems, execution, and scale. Practical insights from building and scaling businesses.",
+  openGraph: {
+    title: "Blog | AlwaysLoading Ventures",
+    description:
+      "Practical insights on systems, execution, and scale from building businesses.",
+  },
+};
 import { BlogSearch } from "@/components/blog-search";
 import { getAllPosts } from "@/lib/blog";
 import { Badge } from "@/components/ui/badge";

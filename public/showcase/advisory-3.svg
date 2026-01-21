@@ -1,0 +1,63 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="adv3-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0f2e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#adv3-bg)"/>
+
+  <text x="300" y="36" font-family="ui-monospace, monospace" font-size="11" fill="#a855f7" text-anchor="middle" font-weight="500">METRICS & FEEDBACK LOOPS</text>
+
+  <!-- Feedback loop visualization -->
+  <rect x="35" y="56" width="250" height="200" rx="10" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.2"/>
+  <text x="55" y="82" font-family="system-ui" font-size="10" fill="#71717a">Continuous Feedback Cycle</text>
+
+  <!-- Loop circle -->
+  <circle cx="160" cy="160" r="70" fill="none" stroke="#a855f7" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="8 4"/>
+  <circle cx="160" cy="160" r="25" fill="#12081f" stroke="#a855f7" stroke-opacity="0.3"/>
+  <text x="160" y="165" font-family="system-ui" font-size="8" fill="#a855f7" text-anchor="middle">Loop</text>
+
+  <!-- Measure node -->
+  <rect x="130" y="75" width="60" height="26" rx="5" fill="#a855f7" fill-opacity="0.15" stroke="#a855f7" stroke-opacity="0.3"/>
+  <text x="145" y="92" font-family="system-ui" font-size="8" fill="#a855f7">Measure</text>
+
+  <!-- Analyze node -->
+  <rect x="215" y="145" width="55" height="26" rx="5" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-opacity="0.3"/>
+  <text x="228" y="162" font-family="system-ui" font-size="8" fill="#22c55e">Analyze</text>
+
+  <!-- Decide node -->
+  <rect x="130" y="220" width="55" height="26" rx="5" fill="#eab308" fill-opacity="0.15" stroke="#eab308" stroke-opacity="0.3"/>
+  <text x="143" y="237" font-family="system-ui" font-size="8" fill="#eab308">Decide</text>
+
+  <!-- Act node -->
+  <rect x="50" y="145" width="45" height="26" rx="5" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-opacity="0.3"/>
+  <text x="63" y="162" font-family="system-ui" font-size="8" fill="#ec4899">Act</text>
+
+  <!-- Metrics panel -->
+  <rect x="305" y="56" width="260" height="200" rx="10" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.2"/>
+  <text x="325" y="82" font-family="system-ui" font-size="10" fill="#71717a">Live Metrics Dashboard</text>
+  <rect x="325" y="92" width="220" height="1" fill="#a855f7" fill-opacity="0.1"/>
+
+  <rect x="325" y="105" width="220" height="42" rx="6" fill="#22c55e" fill-opacity="0.08"/>
+  <text x="340" y="125" font-family="system-ui" font-size="9" fill="#71717a">Monthly Recurring Revenue</text>
+  <text x="340" y="142" font-family="ui-monospace, monospace" font-size="14" fill="#22c55e">$127K</text>
+  <text x="420" y="142" font-family="system-ui" font-size="9" fill="#22c55e">+8% MoM</text>
+
+  <rect x="325" y="155" width="220" height="42" rx="6" fill="#a855f7" fill-opacity="0.08"/>
+  <text x="340" y="175" font-family="system-ui" font-size="9" fill="#71717a">Activation Rate</text>
+  <text x="340" y="192" font-family="ui-monospace, monospace" font-size="14" fill="#a855f7">62%</text>
+  <text x="400" y="192" font-family="system-ui" font-size="9" fill="#22c55e">+3pp</text>
+
+  <rect x="325" y="205" width="220" height="42" rx="6" fill="#eab308" fill-opacity="0.08"/>
+  <text x="340" y="225" font-family="system-ui" font-size="9" fill="#71717a">Churn Rate</text>
+  <text x="340" y="242" font-family="ui-monospace, monospace" font-size="14" fill="#eab308">4.2%</text>
+  <text x="400" y="242" font-family="system-ui" font-size="9" fill="#22c55e">-0.5pp</text>
+
+  <!-- Bottom insight -->
+  <rect x="35" y="276" width="530" height="94" rx="10" fill="#1a0f2e" stroke="#22c55e" stroke-opacity="0.2"/>
+  <text x="55" y="302" font-family="system-ui" font-size="10" fill="#22c55e">Latest Insight</text>
+  <rect x="55" y="312" width="490" height="1" fill="#22c55e" fill-opacity="0.1"/>
+  <text x="55" y="335" font-family="system-ui" font-size="9" fill="#d4d4d8">Activation rate improved 3pp after simplifying onboarding flow.</text>
+  <text x="55" y="355" font-family="system-ui" font-size="9" fill="#71717a">Recommendation: Continue iteration on first-run experience.</text>
+</svg>

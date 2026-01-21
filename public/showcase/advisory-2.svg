@@ -1,0 +1,76 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="adv2-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0f2e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#adv2-bg)"/>
+
+  <text x="300" y="36" font-family="ui-monospace, monospace" font-size="11" fill="#a855f7" text-anchor="middle" font-weight="500">EXECUTION BACKLOG</text>
+
+  <!-- Kanban columns -->
+  <!-- Prioritized -->
+  <rect x="30" y="56" width="170" height="314" rx="10" fill="#1a0f2e" stroke="#eab308" stroke-opacity="0.25"/>
+  <rect x="30" y="56" width="170" height="32" rx="10" fill="#eab308" fill-opacity="0.08"/>
+  <text x="50" y="78" font-family="system-ui" font-size="10" fill="#eab308" font-weight="500">Prioritized</text>
+  <rect x="168" y="66" width="20" height="14" rx="4" fill="#eab308" fill-opacity="0.2"/>
+  <text x="175" y="77" font-family="system-ui" font-size="8" fill="#eab308" text-anchor="middle">4</text>
+
+  <rect x="42" y="100" width="146" height="54" rx="6" fill="#12081f" stroke="#eab308" stroke-opacity="0.2"/>
+  <text x="54" y="120" font-family="system-ui" font-size="8" fill="#d4d4d8">Payment integration</text>
+  <text x="54" y="140" font-family="system-ui" font-size="7" fill="#eab308">High Priority</text>
+  <text x="140" y="140" font-family="system-ui" font-size="7" fill="#71717a">Due Fri</text>
+
+  <rect x="42" y="164" width="146" height="54" rx="6" fill="#12081f" stroke="#a855f7" stroke-opacity="0.15"/>
+  <text x="54" y="184" font-family="system-ui" font-size="8" fill="#d4d4d8">Onboarding flow v2</text>
+  <text x="54" y="204" font-family="system-ui" font-size="7" fill="#a855f7">Medium</text>
+  <text x="120" y="204" font-family="system-ui" font-size="7" fill="#71717a">Due Mon</text>
+
+  <rect x="42" y="228" width="146" height="44" rx="6" fill="#12081f" stroke="#a855f7" stroke-opacity="0.08"/>
+  <text x="54" y="253" font-family="system-ui" font-size="8" fill="#71717a">Analytics dashboard</text>
+
+  <rect x="42" y="282" width="146" height="44" rx="6" fill="#12081f" stroke="#a855f7" stroke-opacity="0.08"/>
+  <text x="54" y="307" font-family="system-ui" font-size="8" fill="#71717a">API rate limiting</text>
+
+  <!-- In Progress -->
+  <rect x="215" y="56" width="170" height="314" rx="10" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.35"/>
+  <rect x="215" y="56" width="170" height="32" rx="10" fill="#a855f7" fill-opacity="0.1"/>
+  <text x="235" y="78" font-family="system-ui" font-size="10" fill="#a855f7" font-weight="500">In Progress</text>
+  <rect x="353" y="66" width="20" height="14" rx="4" fill="#a855f7" fill-opacity="0.2"/>
+  <text x="360" y="77" font-family="system-ui" font-size="8" fill="#a855f7" text-anchor="middle">2</text>
+
+  <rect x="227" y="100" width="146" height="70" rx="6" fill="#a855f7" fill-opacity="0.08" stroke="#a855f7" stroke-opacity="0.25"/>
+  <text x="239" y="120" font-family="system-ui" font-size="8" fill="#d4d4d8">User auth refactor</text>
+  <text x="239" y="140" font-family="system-ui" font-size="7" fill="#a855f7">75% complete</text>
+  <rect x="239" y="150" width="122" height="6" rx="2" fill="#12081f"/>
+  <rect x="239" y="150" width="91" height="6" rx="2" fill="#a855f7" fill-opacity="0.5"/>
+
+  <rect x="227" y="180" width="146" height="70" rx="6" fill="#a855f7" fill-opacity="0.05" stroke="#a855f7" stroke-opacity="0.2"/>
+  <text x="239" y="200" font-family="system-ui" font-size="8" fill="#d4d4d8">Email templates</text>
+  <text x="239" y="220" font-family="system-ui" font-size="7" fill="#a855f7">40% complete</text>
+  <rect x="239" y="230" width="122" height="6" rx="2" fill="#12081f"/>
+  <rect x="239" y="230" width="49" height="6" rx="2" fill="#a855f7" fill-opacity="0.4"/>
+
+  <!-- Done -->
+  <rect x="400" y="56" width="170" height="314" rx="10" fill="#1a0f2e" stroke="#22c55e" stroke-opacity="0.25"/>
+  <rect x="400" y="56" width="170" height="32" rx="10" fill="#22c55e" fill-opacity="0.08"/>
+  <text x="420" y="78" font-family="system-ui" font-size="10" fill="#22c55e" font-weight="500">Done</text>
+  <rect x="538" y="66" width="20" height="14" rx="4" fill="#22c55e" fill-opacity="0.2"/>
+  <text x="545" y="77" font-family="system-ui" font-size="8" fill="#22c55e" text-anchor="middle">8</text>
+
+  <rect x="412" y="100" width="146" height="40" rx="6" fill="#22c55e" fill-opacity="0.08"/>
+  <text x="424" y="125" font-family="system-ui" font-size="8" fill="#22c55e">Landing page</text>
+
+  <rect x="412" y="150" width="146" height="40" rx="6" fill="#22c55e" fill-opacity="0.06"/>
+  <text x="424" y="175" font-family="system-ui" font-size="8" fill="#22c55e">Stripe setup</text>
+
+  <rect x="412" y="200" width="146" height="40" rx="6" fill="#22c55e" fill-opacity="0.04"/>
+  <text x="424" y="225" font-family="system-ui" font-size="8" fill="#71717a">CI/CD pipeline</text>
+
+  <rect x="412" y="250" width="146" height="40" rx="6" fill="#22c55e" fill-opacity="0.02"/>
+  <text x="424" y="275" font-family="system-ui" font-size="8" fill="#52525b">DB migration</text>
+
+  <rect x="412" y="300" width="146" height="28" rx="6" fill="#22c55e" fill-opacity="0.02"/>
+  <text x="485" y="318" font-family="system-ui" font-size="7" fill="#52525b" text-anchor="middle">+4 more</text>
+</svg>

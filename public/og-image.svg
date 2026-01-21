@@ -1,0 +1,76 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="og-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0f2e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="og-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#og-bg)"/>
+
+  <!-- Ambient glow -->
+  <circle cx="900" cy="300" r="300" fill="#a855f7" fill-opacity="0.08" filter="url(#og-glow)"/>
+  <circle cx="300" cy="400" r="200" fill="#a855f7" fill-opacity="0.05" filter="url(#og-glow)"/>
+
+  <!-- Border frame -->
+  <rect x="40" y="40" width="1120" height="550" rx="24" fill="none" stroke="#a855f7" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- Logo/Brand area -->
+  <text x="80" y="120" font-family="ui-monospace, monospace" font-size="14" fill="#a855f7" font-weight="500" letter-spacing="0.15em">ALWAYSLOADING VENTURES</text>
+
+  <!-- Main headline -->
+  <text x="80" y="260" font-family="system-ui, sans-serif" font-size="72" fill="#ffffff" font-weight="600">Operator-Led</text>
+  <text x="80" y="350" font-family="system-ui, sans-serif" font-size="72" fill="#a855f7" font-weight="600">Venture Studio</text>
+
+  <!-- Tagline -->
+  <text x="80" y="430" font-family="system-ui, sans-serif" font-size="24" fill="#a1a1aa">Execution, systems, and strategic leadership</text>
+  <text x="80" y="465" font-family="system-ui, sans-serif" font-size="24" fill="#71717a">for founders ready to scale.</text>
+
+  <!-- Bottom tags -->
+  <rect x="80" y="520" width="120" height="36" rx="8" fill="#a855f7" fill-opacity="0.15"/>
+  <text x="110" y="545" font-family="system-ui, sans-serif" font-size="14" fill="#a855f7">Advisory</text>
+
+  <rect x="220" y="520" width="160" height="36" rx="8" fill="#22c55e" fill-opacity="0.1"/>
+  <text x="250" y="545" font-family="system-ui, sans-serif" font-size="14" fill="#22c55e">Partnership</text>
+
+  <rect x="400" y="520" width="140" height="36" rx="8" fill="#eab308" fill-opacity="0.1"/>
+  <text x="430" y="545" font-family="system-ui, sans-serif" font-size="14" fill="#eab308">Execution</text>
+
+  <!-- Decorative elements -->
+  <rect x="900" y="140" width="220" height="350" rx="16" fill="#1a0f2e" stroke="#a855f7" stroke-opacity="0.2"/>
+
+  <!-- Mini dashboard mockup -->
+  <text x="930" y="180" font-family="ui-monospace, monospace" font-size="11" fill="#71717a">EXECUTION METRICS</text>
+
+  <rect x="930" y="200" width="160" height="50" rx="8" fill="#22c55e" fill-opacity="0.1"/>
+  <text x="950" y="225" font-family="system-ui, sans-serif" font-size="12" fill="#71717a">Growth</text>
+  <text x="950" y="242" font-family="ui-monospace, monospace" font-size="18" fill="#22c55e">+42%</text>
+
+  <rect x="930" y="260" width="160" height="50" rx="8" fill="#a855f7" fill-opacity="0.1"/>
+  <text x="950" y="285" font-family="system-ui, sans-serif" font-size="12" fill="#71717a">Systems</text>
+  <text x="950" y="302" font-family="ui-monospace, monospace" font-size="18" fill="#a855f7">Active</text>
+
+  <rect x="930" y="320" width="160" height="50" rx="8" fill="#eab308" fill-opacity="0.1"/>
+  <text x="950" y="345" font-family="system-ui, sans-serif" font-size="12" fill="#71717a">Execution</text>
+  <text x="950" y="362" font-family="ui-monospace, monospace" font-size="18" fill="#eab308">On Track</text>
+
+  <!-- Progress bars -->
+  <rect x="930" y="390" width="160" height="8" rx="4" fill="#12081f"/>
+  <rect x="930" y="390" width="130" height="8" rx="4" fill="#a855f7" fill-opacity="0.5"/>
+
+  <rect x="930" y="410" width="160" height="8" rx="4" fill="#12081f"/>
+  <rect x="930" y="410" width="100" height="8" rx="4" fill="#22c55e" fill-opacity="0.5"/>
+
+  <rect x="930" y="430" width="160" height="8" rx="4" fill="#12081f"/>
+  <rect x="930" y="430" width="140" height="8" rx="4" fill="#eab308" fill-opacity="0.5"/>
+
+  <text x="930" y="470" font-family="system-ui, sans-serif" font-size="11" fill="#52525b">alwaysloadingventures.com</text>
+</svg>

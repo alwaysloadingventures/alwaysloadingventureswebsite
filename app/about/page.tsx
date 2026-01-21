@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "An operator-led venture studio and advisory firm built around execution, systems, and long-term value creation. Learn about our philosophy and track record.",
+  openGraph: {
+    title: "About | AlwaysLoading Ventures",
+    description:
+      "Operator-led venture studio built around execution, systems, and long-term value creation.",
+  },
+};
 import { buttonVariants } from "@/lib/button-variants";
-import { PageHeader } from "@/components/layout-primitives";
 import {
   Card,
   CardHeader,
@@ -8,7 +19,32 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { ResizableShowcase } from "@/components/marketing/resizable-showcase";
+import {
+  OperatorMindsetViz,
+  TechnologyForwardViz,
+  LongTermValueViz,
+} from "@/components/illustrations/about";
+
+const showcaseItems = [
+  {
+    title: "Operator Mindset",
+    caption: "Built by operators who prioritize systems, incentives, and execution over noise.",
+    component: <OperatorMindsetViz />,
+  },
+  {
+    title: "Technology-Forward Execution",
+    caption: "AI, automation, and internal tooling used to compress timelines and reduce friction.",
+    component: <TechnologyForwardViz />,
+  },
+  {
+    title: "Long-Term Value Creation",
+    caption: "We optimize for durability, not short-term optics.",
+    component: <LongTermValueViz />,
+  },
+];
 
 const trackRecord = [
   {
@@ -107,22 +143,53 @@ const notAFitFor = [
 
 export default function AboutPage() {
   return (
-    <div className="space-y-16">
-      <PageHeader
-        eyebrow="Who We Are"
-        title="About AlwaysLoading Ventures"
-        description="An operator-led venture studio and advisory firm built around execution, systems, and long-term value creation."
+    <div className="space-y-16 sm:space-y-24">
+      <ResizableShowcase
+        title="How We Operate"
+        subtitle="Systems-first. Technology-forward. Outcome-driven."
+        chips={["Systems", "Automation", "Durability"]}
+        items={showcaseItems}
+        left={
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+                Who We Are
+              </p>
+              <Badge variant="secondary" className="text-[11px]">About</Badge>
+            </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-[1.1]">
+              About AlwaysLoading Ventures
+            </h1>
+            <p className="text-base sm:text-lg leading-[1.7] text-muted-foreground/90 max-w-xl">
+              An operator-led venture studio and advisory firm built around execution, systems, and long-term value creation.
+            </p>
+            <p className="text-sm sm:text-base leading-[1.7] text-muted-foreground/70 max-w-xl">
+              We're operators who have built and scaled businesses from zero. Now we partner with founders who want execution, not just advice.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-4">
+              <Link
+                href="/apply"
+                className={buttonVariants({
+                  size: "lg",
+                  className: "w-full sm:w-auto px-8",
+                })}
+              >
+                Apply to Work With Us
+              </Link>
+              <Link
+                href="/how-we-partner"
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "lg",
+                  className: "w-full sm:w-auto px-8",
+                })}
+              >
+                How We Partner
+              </Link>
+            </div>
+          </div>
+        }
       />
-
-      {/* Intro Context */}
-      <section className="space-y-4 max-w-3xl">
-        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
-          AlwaysLoading Ventures exists because too many businesses stall — not from lack of ideas or talent, but from lack of systems, focus, and execution discipline.
-        </p>
-        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
-          We're operators who have built and scaled businesses from zero. Now we partner with founders who want execution, not just advice. We work with a small number of companies at a time — through advisory, venture studio partnerships, or hands-on operational roles.
-        </p>
-      </section>
 
       <Separator className="bg-border/40" />
 
@@ -294,7 +361,7 @@ export default function AboutPage() {
       <Separator className="bg-border/40" />
 
       {/* CTA */}
-      <section className="text-center space-y-6 py-4">
+      <section className="text-center space-y-6 py-4 sm:py-8">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
           Want to Work With Us?
         </h2>
