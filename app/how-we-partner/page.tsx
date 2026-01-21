@@ -258,10 +258,10 @@ export default function HowWePartnerPage() {
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
-            href="/apply/advisory"
+            href="/apply"
             className={buttonVariants({ size: "lg", className: "px-8" })}
           >
-            Apply for Advisory
+            Apply Now
           </Link>
           <Link
             href="/apply/partnership"
@@ -271,7 +271,7 @@ export default function HowWePartnerPage() {
               className: "px-8",
             })}
           >
-            Apply for Strategic Partnership
+            Explore Partnership
           </Link>
         </div>
       </section>

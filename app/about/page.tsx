@@ -211,24 +211,12 @@ export default function AboutPage() {
         <p className="text-sm sm:text-base text-muted-foreground/80 max-w-lg mx-auto leading-[1.6]">
           We're selective about who we work with, but always open to meeting ambitious founders and operators.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            href="/apply/advisory"
-            className={buttonVariants({ size: "lg", className: "px-8" })}
-          >
-            Apply for Advisory
-          </Link>
-          <Link
-            href="/apply/partnership"
-            className={buttonVariants({
-              variant: "outline",
-              size: "lg",
-              className: "px-8",
-            })}
-          >
-            Apply for Strategic Partnership
-          </Link>
-        </div>
+        <Link
+          href="/apply"
+          className={buttonVariants({ size: "lg", className: "px-10" })}
+        >
+          Apply to Work With Us
+        </Link>
       </section>
     </div>
   );
