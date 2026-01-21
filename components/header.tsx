@@ -40,9 +40,9 @@ export function Header() {
           <Image
             src="/logo-dark.svg"
             alt="AlwaysLoading Ventures"
-            width={280}
-            height={56}
-            className="h-[44px] sm:h-[56px] w-auto"
+            width={560}
+            height={112}
+            className="h-[88px] sm:h-[112px] w-auto"
             priority
           />
         </Link>

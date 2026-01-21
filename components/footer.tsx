@@ -14,9 +14,9 @@ export function Footer() {
             <Image
               src="/logo-dark.svg"
               alt="AlwaysLoading Ventures"
-              width={220}
-              height={44}
-              className="h-[40px] sm:h-[48px] w-auto"
+              width={480}
+              height={96}
+              className="h-[76px] sm:h-[96px] w-auto"
             />
           </div>
 
