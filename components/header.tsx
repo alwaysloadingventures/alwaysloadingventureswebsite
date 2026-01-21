@@ -19,7 +19,7 @@ const navLinks = [
   { href: "/how-we-partner", label: "How We Partner" },
   { href: "/venture-studio", label: "Venture Studio" },
   { href: "/advisory", label: "Advisory" },
-  { href: "/apply", label: "Apply" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ];
 

@@ -9,23 +9,65 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import {
+  TrendingUp,
+  Package,
+  Settings,
+  Share2,
+  Layers,
+  Users,
+  Rocket,
+  UserPlus,
+} from "lucide-react";
 
 const provenOutcomes = [
-  { label: "Company A", result: "$0 → $250M", timeframe: "4 years" },
-  { label: "Company B", result: "$0 → $20M", timeframe: "2 years" },
-  { label: "Company C", result: "$0 → $2M", timeframe: "1 year" },
-  { label: "Company D", result: "$0 → $10M", timeframe: "1.5 years" },
+  { label: "Company A", industry: "Fintech", result: "$0 → $250M", timeframe: "4 years" },
+  { label: "Company B", industry: "E-commerce", result: "$0 → $20M", timeframe: "2 years" },
+  { label: "Company C", industry: "SaaS", result: "$0 → $2M", timeframe: "1 year" },
+  { label: "Company D", industry: "Marketplace", result: "$0 → $10M", timeframe: "1.5 years" },
 ];
 
 const toolbox = [
-  "Growth Strategy",
-  "Product Development",
-  "Operations",
-  "Distribution",
-  "Systems Design",
-  "Executive Leadership",
-  "Go-to-Market",
-  "Team Building",
+  {
+    title: "Growth Strategy",
+    description: "Scalable acquisition and retention systems",
+    icon: TrendingUp,
+  },
+  {
+    title: "Product Development",
+    description: "Roadmaps, prioritization, and shipping cadence",
+    icon: Package,
+  },
+  {
+    title: "Operations",
+    description: "Processes, automation, and efficiency",
+    icon: Settings,
+  },
+  {
+    title: "Distribution",
+    description: "Channels, partnerships, and go-to-market",
+    icon: Share2,
+  },
+  {
+    title: "Systems Design",
+    description: "Architecture that scales with growth",
+    icon: Layers,
+  },
+  {
+    title: "Executive Leadership",
+    description: "Strategic direction and decision-making",
+    icon: Users,
+  },
+  {
+    title: "Go-to-Market",
+    description: "Launch strategy and market positioning",
+    icon: Rocket,
+  },
+  {
+    title: "Team Building",
+    description: "Hiring, structure, and culture",
+    icon: UserPlus,
+  },
 ];
 
 export default function HomePage() {
@@ -100,11 +142,14 @@ export default function HomePage() {
           {provenOutcomes.map((outcome) => (
             <Card key={outcome.label} size="sm" className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
               <CardContent className="pt-4 space-y-1">
-                <p className="text-[11px] text-muted-foreground/50 tracking-wide uppercase">{outcome.label}</p>
+                <div className="flex items-center gap-1.5">
+                  <p className="text-[11px] text-muted-foreground/70 tracking-wide uppercase">{outcome.label}</p>
+                  <span className="text-[10px] text-muted-foreground/50">({outcome.industry})</span>
+                </div>
                 <p className="text-lg sm:text-xl font-semibold text-foreground tracking-tight">
                   {outcome.result}
                 </p>
-                <p className="text-xs sm:text-sm text-muted-foreground/60">
+                <p className="text-xs sm:text-sm text-muted-foreground/70">
                   in {outcome.timeframe}
                 </p>
               </CardContent>
@@ -112,10 +157,22 @@ export default function HomePage() {
           ))}
         </div>
 
-        <p className="text-[11px] text-muted-foreground/50 leading-relaxed">
-          Results reflect contributions as part of broader teams. Outcomes shown
-          for context, not guarantees.
-        </p>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+          <p className="text-[11px] text-muted-foreground/50 leading-relaxed">
+            Results reflect contributions as part of broader teams. Outcomes shown
+            for context, not guarantees.
+          </p>
+          <Link
+            href="#operator-toolbox"
+            className={buttonVariants({
+              variant: "outline",
+              size: "sm",
+              className: "w-fit text-xs",
+            })}
+          >
+            See the Operator Toolbox
+          </Link>
+        </div>
       </section>
 
       {/* Engagements - 2 big cards */}
@@ -179,8 +236,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Toolbox */}
-      <section className="space-y-5">
+      {/* Operator Toolbox - Icon Grid */}
+      <section id="operator-toolbox" className="space-y-6 scroll-mt-20">
         <div className="space-y-3">
           <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
             What We Bring
@@ -188,14 +245,32 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
             Operator Toolbox
           </h2>
+          <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
+            Core competencies we deploy across advisory and partnership engagements.
+          </p>
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          {toolbox.map((tool) => (
-            <Badge key={tool} variant="outline" className="text-xs sm:text-sm py-1.5 px-3 border-border/60 text-muted-foreground/90">
-              {tool}
-            </Badge>
-          ))}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          {toolbox.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Card
+                key={item.title}
+                size="sm"
+                className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]"
+              >
+                <CardContent className="pt-4 space-y-2">
+                  <Icon className="h-5 w-5 text-primary/70" />
+                  <p className="text-sm font-medium text-foreground">
+                    {item.title}
+                  </p>
+                  <p className="text-xs text-muted-foreground/70 leading-relaxed">
+                    {item.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </section>
 
