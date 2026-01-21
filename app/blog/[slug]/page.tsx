@@ -78,22 +78,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <Separator className="bg-border/40" />
 
-      {/* Content with Typography/Prose styling */}
+      {/* Content with Typography/Prose styling - Editorial layout */}
       <div
         className="prose prose-invert prose-lg max-w-none
-          prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-foreground
-          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-border/30
-          prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-          prose-h4:text-lg prose-h4:mt-6 prose-h4:mb-2
-          prose-p:text-muted-foreground/85 prose-p:leading-[1.8]
-          prose-li:text-muted-foreground/85 prose-li:leading-[1.7] prose-li:my-1
-          prose-ul:my-4 prose-ol:my-4
+          [&>p:first-of-type]:text-xl [&>p:first-of-type]:leading-[1.9] [&>p:first-of-type]:text-muted-foreground/90
+          [&>p:first-of-type>strong:first-child]:text-primary [&>p:first-of-type>strong:first-child]:font-semibold
+          prose-headings:font-semibold prose-headings:tracking-[-0.02em] prose-headings:text-foreground
+          prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:pb-3 prose-h2:border-b prose-h2:border-border/40
+          prose-h3:text-lg prose-h3:sm:text-xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-foreground/95
+          prose-h4:text-base prose-h4:sm:text-lg prose-h4:mt-8 prose-h4:mb-3 prose-h4:text-foreground/90
+          prose-p:text-muted-foreground/85 prose-p:leading-[1.85] prose-p:my-5
+          prose-li:text-muted-foreground/85 prose-li:leading-[1.75] prose-li:my-2
+          prose-ul:my-6 prose-ul:pl-6 prose-ol:my-6 prose-ol:pl-6
           prose-strong:text-foreground prose-strong:font-semibold
-          prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+          prose-a:text-primary prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-primary/80
           prose-code:text-primary prose-code:bg-muted/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
-          prose-pre:bg-card prose-pre:border prose-pre:border-border/30 prose-pre:rounded-lg
-          prose-blockquote:border-l-primary prose-blockquote:border-l-2 prose-blockquote:text-muted-foreground/70 prose-blockquote:italic prose-blockquote:pl-4
-          prose-hr:border-border/40 prose-hr:my-8"
+          prose-pre:bg-card prose-pre:border prose-pre:border-border/30 prose-pre:rounded-lg prose-pre:my-8
+          prose-blockquote:border-l-primary prose-blockquote:border-l-4 prose-blockquote:bg-primary/[0.03] prose-blockquote:text-muted-foreground/80 prose-blockquote:not-italic prose-blockquote:pl-6 prose-blockquote:pr-4 prose-blockquote:py-4 prose-blockquote:rounded-r-lg prose-blockquote:my-8
+          prose-hr:border-border/50 prose-hr:my-12"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 

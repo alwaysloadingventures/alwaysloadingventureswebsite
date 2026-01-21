@@ -1,7 +1,7 @@
 ---
 title: "The Operator Toolbox: A Practical Playbook"
 description: "A comprehensive guide to the eight core competencies that drive operational excellence — from growth strategy to team building, with actionable frameworks and AI-accelerated execution."
-date: "2024-01-15"
+date: "2026-01-21"
 author: "AlwaysLoading Ventures"
 tags: ["Operations", "Strategy", "Playbook"]
 ---

@@ -49,7 +49,7 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
 
           {/* Title */}
           <CardTitle
-            className={`group-hover:text-primary transition-colors ${
+            className={`group-hover:text-primary transition-colors line-clamp-2 ${
               featured ? "text-xl sm:text-2xl" : "text-lg"
             }`}
           >
