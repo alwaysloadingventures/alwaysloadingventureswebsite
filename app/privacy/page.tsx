@@ -91,7 +91,7 @@ export default function PrivacyPage() {
         <section className="space-y-4">
           <h2 className="text-lg font-semibold text-foreground">Contact Us</h2>
           <p>
-            For questions about this Privacy Policy, please contact us at privacy@alwaysloading.vc
+            For questions about this Privacy Policy, please contact us at partnerships@alwaysloading.net
           </p>
         </section>
       </div>

@@ -37,11 +37,23 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "AlwaysLoading Ventures" }],
   creator: "AlwaysLoading Ventures",
-  metadataBase: new URL("https://alwaysloadingventures.com"),
+  metadataBase: new URL("https://alwaysloading.net"),
+  icons: {
+    icon: [
+      { url: "/favicons/favicon.ico", sizes: "any" },
+      { url: "/favicons/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicons/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/favicons/apple-touch-icon.png", sizes: "180x180" },
+    ],
+    shortcut: "/favicons/favicon.ico",
+  },
+  manifest: "/favicons/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://alwaysloadingventures.com",
+    url: "https://alwaysloading.net",
     siteName: "AlwaysLoading Ventures",
     title: "AlwaysLoading Ventures — Operator-Led Venture Studio & Advisory",
     description:

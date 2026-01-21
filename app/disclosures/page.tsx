@@ -83,7 +83,7 @@ export default function DisclosuresPage() {
         <section className="space-y-4">
           <h2 className="text-lg font-semibold text-foreground">Contact</h2>
           <p>
-            For questions about these disclosures, please contact us at legal@alwaysloading.vc
+            For questions about these disclosures, please contact us at partnerships@alwaysloading.net
           </p>
         </section>
       </div>
