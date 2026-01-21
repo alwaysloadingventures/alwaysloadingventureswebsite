@@ -6,61 +6,115 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
+  CardContent,
 } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
-const whoItsFor = [
+const buildingTogetherPrinciples = [
   {
-    title: "First-Time Founders",
+    title: "Shared Execution Responsibility",
     description:
-      "You have domain expertise and hustle, but need an experienced operator to help structure, scale, and execute alongside you.",
+      "We don't advise from the sidelines. We take ownership of outcomes alongside you — building, shipping, and iterating together.",
   },
   {
-    title: "Technical Founders",
+    title: "Systems-First Thinking",
     description:
-      "You can build the product, but need help with go-to-market, operations, distribution, and the business side of scaling.",
+      "We prioritize repeatable systems over one-off wins. Processes, automation, and infrastructure that compound over time.",
   },
   {
-    title: "Idea-Stage Entrepreneurs",
+    title: "Operator Involvement",
     description:
-      "You have a validated concept and early traction, but need hands-on help turning it into a real, scalable business.",
+      "Strategy, operations, growth, product, and tooling — we work across the stack wherever execution leverage is highest.",
   },
   {
-    title: "Existing Operators",
+    title: "Built for Durability",
     description:
-      "You're running something that works but want a co-builder to help accelerate growth and bring complementary skills.",
+      "No short-term hacks or growth-at-all-costs. We focus on sustainable models that work in constrained, regulated, or rules-based environments.",
   },
 ];
 
-const whatCollaborationLooksLike = [
-  "Weekly strategy and execution syncs",
-  "Shared ownership of key outcomes and KPIs",
-  "Direct involvement in product, ops, and growth decisions",
-  "Access to our systems, playbooks, and network",
-  "Async collaboration via shared tools and documentation",
-  "Transparent communication about what's working and what isn't",
-];
-
-const expectations = [
+const collaborationSteps = [
   {
-    title: "From You",
-    items: [
-      "Full commitment to the venture (this is your primary focus)",
-      "Openness to feedback and iteration",
-      "Willingness to do the hard work — we execute together",
-      "Transparency about challenges and blockers",
-      "Decision-making partnership, not delegation",
-    ],
+    step: "01",
+    title: "Application & Fit",
+    description:
+      "Submit a brief application outlining your business, stage, and goals. We review every submission and reach out if there's potential alignment.",
   },
   {
-    title: "From Us",
-    items: [
-      "Hands-on operational involvement, not just advice",
-      "Systems, playbooks, and frameworks that work",
-      "Network access and introductions where helpful",
-      "Honest assessment of what's working and what isn't",
-      "Long-term thinking aligned with your success",
-    ],
+    step: "02",
+    title: "Operator Diagnostic",
+    description:
+      "For qualified opportunities, we conduct a deeper review of your operations, metrics, and blockers. We identify where we can add the most value.",
+  },
+  {
+    step: "03",
+    title: "30/60/90 Execution Plan",
+    description:
+      "We co-create a structured plan with clear deliverables, ownership, and success metrics. No ambiguity — aligned expectations from day one.",
+  },
+  {
+    step: "04",
+    title: "Weekly Operating Cadence",
+    description:
+      "Regular syncs, async collaboration, and hands-on execution. We work alongside your team in a structured rhythm — not sporadic check-ins.",
+  },
+  {
+    step: "05",
+    title: "KPI Dashboard & Decision Framework",
+    description:
+      "Shared visibility into metrics that matter. Data-driven decisions with clear accountability and fast feedback loops.",
+  },
+  {
+    step: "06",
+    title: "Ongoing Iteration & Scaling",
+    description:
+      "As the venture matures, we adapt our involvement. Regular checkpoints to assess progress, adjust strategy, and scale what's working.",
+  },
+];
+
+const whatWeContribute = [
+  "Execution leadership across strategy, ops, and growth",
+  "Systems design and process automation",
+  "AI-assisted workflows and agentic coding",
+  "Internal tooling and admin systems",
+  "BI/KPI dashboards and reporting cadence",
+  "Funnel architecture and distribution systems",
+  "Operational discipline in constrained environments",
+  "Hiring guidance, incentive design, and accountability systems",
+];
+
+const forYouIf = [
+  "You want an operator partner, not just advice or capital",
+  "You're open to metrics, accountability, and fast iteration",
+  "You have domain expertise and hustle — and want execution leverage",
+  "You're building in trading tech, prediction markets, digital products, or regulated platforms",
+  "You value systems over heroics, outcomes over activity",
+];
+
+const notForYouIf = [
+  "You're at the idea stage without validated demand",
+  "You're looking for passive capital or hands-off involvement",
+  "You want to maintain full control without shared decision-making",
+  "You're not ready to commit to transparency and metric visibility",
+  "You're looking for quick wins rather than sustainable growth",
+];
+
+const alignmentPrinciples = [
+  {
+    title: "Ownership Reflects Contribution",
+    description:
+      "Equity and responsibility go together. We structure partnerships where everyone's incentives are aligned with the venture's success.",
+  },
+  {
+    title: "Alignment Over Speed",
+    description:
+      "We take time to ensure fit before committing. Rushing into the wrong partnership helps no one. Chemistry and values matter.",
+  },
+  {
+    title: "Transparency Required",
+    description:
+      "We need real visibility into metrics, challenges, and decisions. If we can't see what's happening, we can't help move the needle.",
   },
 ];
 
@@ -70,46 +124,37 @@ export default function VentureStudioPage() {
       <PageHeader
         eyebrow="Build With Us"
         title="Venture Studio"
-        description="Our venture studio exists to build and scale businesses, not just advise them. We focus on internal ventures, co-built companies, and platform extensions where execution drives value."
+        description="We build and scale businesses alongside founders — not from the sidelines. This is hands-on, operator-led collaboration for ventures in trading tech, prediction markets, digital products, and regulated platforms."
       />
 
-      {/* What It Means */}
-      <section className="space-y-6">
+      {/* Intro Context */}
+      <section className="space-y-4 max-w-3xl">
+        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
+          The Venture Studio is where we invest our time, expertise, and capacity into building something meaningful together. It's not advisory. It's not passive capital. It's shared execution — rolling up our sleeves and doing the work alongside you.
+        </p>
+        <p className="text-sm sm:text-base text-muted-foreground/85 leading-[1.7]">
+          We work with a very small number of ventures at a time — typically 1-2 active projects — because this model requires real commitment from both sides. When we say yes, we're all in.
+        </p>
+      </section>
+
+      <Separator className="bg-border/40" />
+
+      {/* What Building Together Means */}
+      <section className="space-y-8">
         <div className="space-y-3">
           <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
             The Model
           </p>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
-            What Building With Us Means
+            What "Building Together" Means
           </h2>
-        </div>
-        <div className="space-y-4 text-sm sm:text-base text-muted-foreground/80 leading-[1.7] max-w-3xl">
-          <p>
-            A venture studio partnership is different from advisory. We're not on the sidelines — we're in the trenches with you, building the company together.
-          </p>
-          <p>
-            This means shared ownership, shared risk, and shared upside. We take equity in exchange for deep operational involvement: strategy, systems, distribution, product, and execution.
-          </p>
-          <p>
-            We're selective because this model requires significant commitment from both sides. When we say yes, it's because we believe in the opportunity and the team — and we're ready to do the work.
+          <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
+            This isn't consulting with equity. It's a true partnership where we share responsibility for outcomes.
           </p>
         </div>
-      </section>
 
-      <Separator className="bg-border/40" />
-
-      {/* Who It's For */}
-      <section className="space-y-8">
-        <div className="space-y-3">
-          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-            Ideal Partners
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
-            Who This Is For
-          </h2>
-        </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          {whoItsFor.map((item) => (
+          {buildingTogetherPrinciples.map((item) => (
             <Card
               key={item.title}
               className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]"
@@ -127,81 +172,35 @@ export default function VentureStudioPage() {
 
       <Separator className="bg-border/40" />
 
-      {/* How We Decide */}
-      <section className="space-y-6">
-        <div className="space-y-3">
-          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-            Selection
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
-            How We Decide
-          </h2>
-        </div>
-        <div className="space-y-4 text-sm sm:text-base text-muted-foreground/80 leading-[1.7] max-w-3xl">
-          <p>
-            We evaluate opportunities based on market potential, founder-market fit, early traction or validation, and alignment with our operational strengths.
-          </p>
-          <p>
-            More importantly, we assess the working relationship. Can we collaborate effectively? Are we aligned on values, pace, and expectations? This is a partnership, and chemistry matters.
-          </p>
-          <p>
-            We work with a very limited number of ventures at a time — typically 1-2 active studio projects. This ensures we can give each one the attention it deserves.
-          </p>
-        </div>
-      </section>
-
-      <Separator className="bg-border/40" />
-
-      {/* What Collaboration Looks Like */}
-      <section className="space-y-6">
-        <div className="space-y-3">
-          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-            Working Together
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
-            What Collaboration Looks Like
-          </h2>
-        </div>
-        <ul className="grid gap-2 sm:grid-cols-2 text-sm sm:text-base text-muted-foreground/80">
-          {whatCollaborationLooksLike.map((item) => (
-            <li key={item}>• {item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <Separator className="bg-border/40" />
-
-      {/* Expectations */}
+      {/* How Collaboration Works */}
       <section className="space-y-8">
         <div className="space-y-3">
           <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-            Mutual Commitment
+            The Process
           </p>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
-            Expectations
+            How Collaboration Works
           </h2>
+          <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
+            From first conversation to ongoing execution. We move deliberately to ensure fit, then fast once we're aligned.
+          </p>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2">
-          {expectations.map((section) => (
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {collaborationSteps.map((step) => (
             <Card
-              key={section.title}
+              key={step.step}
               className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]"
             >
               <CardHeader>
-                <CardTitle className="text-lg">{section.title}</CardTitle>
+                <p className="text-xs text-primary font-mono font-medium">
+                  Step {step.step}
+                </p>
+                <CardTitle className="text-lg">{step.title}</CardTitle>
+                <CardDescription className="text-sm leading-relaxed">
+                  {step.description}
+                </CardDescription>
               </CardHeader>
-              <div className="px-4 pb-4">
-                <ul className="space-y-2">
-                  {section.items.map((item, i) => (
-                    <li
-                      key={i}
-                      className="text-sm text-muted-foreground/80 leading-relaxed"
-                    >
-                      • {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </Card>
           ))}
         </div>
@@ -209,29 +208,129 @@ export default function VentureStudioPage() {
 
       <Separator className="bg-border/40" />
 
-      {/* Timelines & Ownership */}
-      <section className="space-y-6">
+      {/* What We Contribute */}
+      <section className="space-y-8">
         <div className="space-y-3">
           <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
-            Structure
+            Operator Toolkit
           </p>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
-            Timelines & Ownership
+            What We Contribute
           </h2>
+          <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
+            In Venture Studio engagements, we actively deploy execution capacity across these areas — not just advice.
+          </p>
         </div>
-        <div className="space-y-4 text-sm sm:text-base text-muted-foreground/80 leading-[1.7] max-w-3xl">
-          <p>
-            <strong className="text-foreground">Typical commitment:</strong> 12-24 months of active building, with ongoing involvement as the venture matures.
+
+        <Card className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
+          <CardContent className="pt-6">
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {whatWeContribute.map((item, i) => (
+                <li
+                  key={i}
+                  className="text-sm text-muted-foreground/80 leading-relaxed"
+                >
+                  • {item}
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+
+        <p className="text-[11px] text-muted-foreground/60 leading-relaxed max-w-2xl">
+          The specific mix depends on the venture's needs and stage. We focus where execution leverage is highest.
+        </p>
+      </section>
+
+      <Separator className="bg-border/40" />
+
+      {/* Who This Is For / Not For */}
+      <section className="space-y-8">
+        <div className="space-y-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Fit Check
           </p>
-          <p>
-            <strong className="text-foreground">Ownership structure:</strong> Equity split is negotiated case-by-case based on contribution, stage, and risk. We aim for fair alignment where everyone wins when the venture succeeds.
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
+            Is This Right for You?
+          </h2>
+          <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
+            The Venture Studio model works best when there's strong alignment on values, pace, and working style.
           </p>
-          <p>
-            <strong className="text-foreground">Decision-making:</strong> We operate as partners. Major decisions are made together. Day-to-day execution is divided based on strengths and capacity.
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          <Card className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg text-primary/90">
+                This is for you if...
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                {forYouIf.map((item, i) => (
+                  <li
+                    key={i}
+                    className="text-sm text-muted-foreground/80 leading-relaxed"
+                  >
+                    • {item}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg text-muted-foreground/70">
+                This is not for you if...
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                {notForYouIf.map((item, i) => (
+                  <li
+                    key={i}
+                    className="text-sm text-muted-foreground/80 leading-relaxed"
+                  >
+                    • {item}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <Separator className="bg-border/40" />
+
+      {/* Expectations & Alignment */}
+      <section className="space-y-8">
+        <div className="space-y-3">
+          <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
+            Principles
           </p>
-          <p className="text-xs text-muted-foreground/60 italic">
-            Note: This is a high-level overview. Specific terms are discussed during the partnership exploration process.
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-[-0.02em] leading-[1.15]">
+            Expectations & Alignment
+          </h2>
+          <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl leading-[1.6]">
+            Successful partnerships start with shared understanding. Here's how we think about working together.
           </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-3">
+          {alignmentPrinciples.map((item) => (
+            <Card
+              key={item.title}
+              className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]"
+            >
+              <CardHeader>
+                <CardTitle className="text-base">{item.title}</CardTitle>
+                <CardDescription className="text-sm leading-relaxed">
+                  {item.description}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
         </div>
       </section>
 
@@ -243,14 +342,26 @@ export default function VentureStudioPage() {
           Interested in Building Together?
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground/80 max-w-lg mx-auto leading-[1.6]">
-          If you're working on something meaningful and want a hands-on partner, we'd love to hear from you.
+          If you're working on something meaningful and want an operator partner — not just advice — we'd love to hear from you.
         </p>
-        <Link
-          href="/apply/partnership"
-          className={buttonVariants({ size: "lg", className: "px-10" })}
-        >
-          Apply for Strategic Partnership
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link
+            href="/apply/partnership"
+            className={buttonVariants({ size: "lg", className: "px-8" })}
+          >
+            Apply for Strategic Partnership
+          </Link>
+          <Link
+            href="/how-we-partner"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className: "px-8",
+            })}
+          >
+            Learn How We Partner
+          </Link>
+        </div>
       </section>
     </div>
   );
