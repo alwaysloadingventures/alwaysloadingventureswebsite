@@ -1,7 +1,7 @@
 ---
 title: "Distribution > Product: The Uncomfortable Truth"
 description: "Why a good product with great distribution beats a great product with poor distribution — and what to do about it."
-date: "2026-01-21"
+date: "2026-01-19"
 author: "AlwaysLoading Ventures"
 tags: ["Distribution", "Strategy", "Growth"]
 ---

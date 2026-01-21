@@ -1,7 +1,7 @@
 ---
 title: "Why Systems Beat Hustle Every Time"
 description: "The case for building repeatable processes over relying on heroic effort — and how to make the transition."
-date: "2026-01-21"
+date: "2026-01-20"
 author: "AlwaysLoading Ventures"
 tags: ["Operations", "Systems"]
 ---
