@@ -33,12 +33,12 @@ export default function HomePage() {
     <div className="space-y-16 sm:space-y-24">
       {/* Hero Section with spotlight glow */}
       <section className="relative">
-        {/* Spotlight glow */}
+        {/* Spotlight glow - ultra-soft ambient */}
         <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/8 blur-[120px] rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-primary/5 blur-[160px] rounded-full" />
         </div>
 
-        <div className="space-y-6 rounded-2xl border border-border/60 bg-card/40 p-6 sm:p-10 backdrop-blur-sm shadow-sm">
+        <div className="space-y-6 rounded-2xl border border-border/40 bg-card/50 p-6 sm:p-10 backdrop-blur-sm shadow-md ring-1 ring-inset ring-white/[0.03]">
           <div className="flex items-center gap-3">
             <p className="uppercase text-[11px] tracking-[0.15em] text-muted-foreground/70 font-medium">
               Operator-Led
@@ -98,13 +98,13 @@ export default function HomePage() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {provenOutcomes.map((outcome) => (
-            <Card key={outcome.label} size="sm" className="border-border/50 shadow-sm bg-card/60">
+            <Card key={outcome.label} size="sm" className="border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
               <CardContent className="pt-4 space-y-1">
-                <p className="text-[11px] text-muted-foreground/60 tracking-wide uppercase">{outcome.label}</p>
-                <p className="text-lg sm:text-xl font-semibold text-primary tracking-tight">
+                <p className="text-[11px] text-muted-foreground/50 tracking-wide uppercase">{outcome.label}</p>
+                <p className="text-lg sm:text-xl font-semibold text-foreground tracking-tight">
                   {outcome.result}
                 </p>
-                <p className="text-xs sm:text-sm text-muted-foreground/70">
+                <p className="text-xs sm:text-sm text-muted-foreground/60">
                   in {outcome.timeframe}
                 </p>
               </CardContent>
@@ -120,9 +120,9 @@ export default function HomePage() {
 
       {/* Engagements - 2 big cards */}
       <section className="relative space-y-6">
-        {/* Spotlight glow */}
+        {/* Spotlight glow - ultra-soft ambient */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute top-1/2 right-0 translate-x-1/3 -translate-y-1/2 w-[500px] h-[500px] bg-primary/6 blur-[140px] rounded-full" />
+          <div className="absolute top-1/2 right-0 translate-x-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-primary/4 blur-[180px] rounded-full" />
         </div>
 
         <div className="space-y-3">
@@ -135,10 +135,10 @@ export default function HomePage() {
         </div>
 
         <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
-          <Card className="flex flex-col border-border/50 shadow-sm bg-card/60">
+          <Card className="flex flex-col border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg sm:text-xl tracking-tight">Advisory</CardTitle>
-              <CardDescription className="leading-[1.6] text-muted-foreground/80">
+              <CardDescription className="leading-[1.6] text-muted-foreground/75">
                 Hands-on executive advisory for teams ready to implement.
                 Structured engagements with clear deliverables across strategy,
                 operations, growth, product, and systems.
@@ -154,10 +154,10 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="flex flex-col border-border/50 shadow-sm bg-card/60">
+          <Card className="flex flex-col border-border/30 shadow-md bg-card/70 ring-1 ring-inset ring-white/[0.04]">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg sm:text-xl tracking-tight">Strategic Partnership</CardTitle>
-              <CardDescription className="leading-[1.6] text-muted-foreground/80">
+              <CardDescription className="leading-[1.6] text-muted-foreground/75">
                 Equity-based partnerships for ventures where we take an active
                 operational role alongside founders. Capital may be involved —
                 execution always is.
